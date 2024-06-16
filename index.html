@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/cd7b1b5648.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- #Hero Section Start -->
@@ -112,7 +116,13 @@
       <!-- Navbar End -->
       <!-- Hero Content Start -->
       <div class="hero-title-section">
-        <h1 class="hero-title">The home of your dream j b</h1>
+        <h1 class="hero-title">
+          The home of your dream j<img
+            src="/images/title-o.png"
+            alt="title o letter"
+            class="hero-title-o-letter"
+          />b
+        </h1>
         <h4 class="hero-subtitle">
           You do not have the right to remain silent… let us know what it takes
           to challenge you
@@ -122,11 +132,38 @@
       <!-- Hero Search Bar Start -->
       <div class="hero-search">
         <div class="hero-search-items">
-          <input type="text" class="hero-title-search" />
-          <input type="text" class="hero-location-search" />
-          <select name="" id="" class="hero-serach-select">
-            <option value="remotly" class="hero-select-option-item">
-              Remotly
+          <div class="hero-search-title-box">
+            <img
+              src="/images/magnifying-glass-solid.svg"
+              alt="search icon"
+              class="hero-search-icon"
+            />
+            <input
+              type="text"
+              class="hero-title-search"
+              placeholder="| Job Title or keyworld"
+            />
+          </div>
+          <div class="hero-search-location-box">
+            <img
+              src="/images/location-dot-solid.svg"
+              alt="location icon"
+              class="hero-location-icon"
+            />
+            <input
+              type="text"
+              class="hero-location-search"
+              placeholder="Location"
+            />
+          </div>
+
+          <select
+            name="hero-job-type"
+            id="hero-job-type"
+            class="hero-search-select"
+          >
+            <option value="remotely" class="hero-select-option-item">
+              Remotely
             </option>
             <option value="office" class="hero-select-option-item">
               Office
@@ -137,11 +174,21 @@
         <div class="hero-trending-search">
           <h3 class="hero-trending-search-title">Trending Searches</h3>
           <ul class="hero-trending-search-list">
-            <li class="hero-trending-search-item">Remote Job</li>
-            <li class="hero-trending-search-item">UI/UX Design</li>
-            <li class="hero-trending-search-item">Product Design</li>
-            <li class="hero-trending-search-item">Development</li>
-            <li class="hero-trending-search-item">Work from Home</li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Remote Job</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">UI/UX Design</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Product Design</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Development</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Work from Home</button>
+            </li>
           </ul>
         </div>
       </div>
