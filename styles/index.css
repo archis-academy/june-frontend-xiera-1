@@ -86,20 +86,31 @@
   width: 100%;
 }
 
+.hero-hamburger-closed-icon {
+  width: 100%;
+  display: none;
+}
+
 .hero-mobil-menu {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 100px);
   background-color: white;
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 0;
   display: none;
   flex-direction: column;
+  z-index: 1;
 }
+
+.active {
+  display: flex !important;
+}
+
 .hero-mobil-menu-items {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   margin-top: 50px;
 }
 .hero-mobil-menu-item {
@@ -116,6 +127,7 @@
   margin-top: 45px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 50px;
 }
 
