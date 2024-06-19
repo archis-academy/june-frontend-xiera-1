@@ -1,0 +1,220 @@
+/* Font Start */
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/static/Inter-Bold.ttf");
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Inter-Regular";
+  src: url("../fonts/Inter/static/Inter-Regular.ttf");
+  font-weight: 400;
+  font-style: regular;
+}
+
+@font-face {
+  font-family: "Inter-Semibold";
+  src: url("../fonts/Inter/static/Inter-SemiBold.ttf");
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Inter-Medium";
+  src: url("../fonts/Inter/static/Inter-Medium.ttf");
+  font-weight: 500;
+  font-style: medium;
+}
+
+/* Font End */
+
+:root {
+  --fj-location-background-color: #f8ece8;
+  --fj-location-font-color: #f36532;
+  --fj-work-time-background-color: #f8f7fe;
+  --fj-date-font-color: #b5b8c6;
+  --primary-button-background-color: #864bd8;
+  --button-color: #f57343;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: #efeef3;
+}
+
+.featured-jobs {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.jobs-header {
+  position: relative;
+}
+
+.jobs-header > :first-child {
+  color: var(--primary-button-background-color);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+}
+
+.jobs-header > :last-child {
+  color: red;
+  font-family: "Inter-Regular", sans-serif;
+  color: #5b5a62;
+  letter-spacing: -0.4px;
+}
+
+.jobs-header h2 {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+}
+
+.jobs-header span {
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 22px;
+  display: inline-block;
+}
+
+.jobs-navigation-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.jobs-navigation-buttons button {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+#right-arrow {
+  background-color: var(--primary-button-background-color);
+  border: none;
+  cursor: pointer;
+}
+
+#right-arrow:hover {
+  border: 1px solid white;
+}
+
+#left-arrow {
+  background-color: white;
+  border: 2px solid var(--fj-location-background-color);
+  cursor: pointer;
+}
+
+#left-arrow:hover {
+  border: 1px solid var(--primary-button-background-color);
+}
+
+.jobs-vacancies {
+  margin-top: 80px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.jobs-vacancies .vacancies-card {
+  background-color: white;
+  max-width: 320px;
+  max-height: 320px;
+  border-radius: 20px;
+  padding: 30px;
+  transition: 0.3s ease;
+  font-family: "Inter-Semibold", sans-serif;
+  cursor: pointer;
+}
+
+.jobs-vacancies .vacancies-card:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.vc-header img {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.vc-header > span:first-of-type {
+  color: var(--fj-date-font-color);
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 12px;
+}
+
+.vc-content {
+  margin: 40px 20px;
+  font-size: 24px;
+}
+
+.vc-info > :first-child {
+  background-color: var(--fj-location-background-color);
+  padding: 9px 10px;
+  border-radius: 5px;
+  color: var(--fj-location-font-color);
+  margin-right: 10px;
+}
+
+.vc-info > :last-child {
+  background-color: var(--fj-work-time-background-color);
+  color: var(--fj-date-font-color);
+  padding: 9px 10px;
+}
+
+.jobs-see-all {
+  font-family: "Inter-Semibold", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.jobs-see-all button {
+  background-color: var(--primary-button-background-color);
+  color: white;
+  font-size: 14px;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: none;
+}
+
+@media screen and (max-width: 1078px) {
+  .jobs-header {
+    margin: 0 50px;
+    text-align: center;
+  }
+
+  .jobs-navigation-buttons {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .jobs-vacancies {
+    margin-top: 10px;
+  }
+}
