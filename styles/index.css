@@ -301,6 +301,59 @@ body {
   right: 230px;
 }
 
+.hero-modal-container {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.382);
+}
+
+.hero-modal-close-icon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.hero-modal {
+  width: 950px;
+  background-color: #fff;
+  height: 350px;
+  border: none;
+  box-shadow: 5px 5px 5px 5px #00000074;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 200px;
+}
+
+.hero-modal-table {
+  border-spacing: 0;
+}
+
+.hero-modal-table-head > tr > th,
+.hero-modal-table-body > tr > td {
+  width: 360px;
+  padding: 10px 0px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.hero-modal-table-body > tr:hover {
+  background-color: #03badfb4;
+}
+
 @media screen and (max-width: 1024px) {
   .hero-container {
     margin: 50px 15px;

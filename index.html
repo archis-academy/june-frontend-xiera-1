@@ -173,10 +173,14 @@
             id="hero-job-type"
             class="hero-search-select"
           >
+            <option value="default">Pick a type</option>
             <option value="remotely">Remotely</option>
             <option value="office">Office</option>
+            <option value="hibrit">Hibrit</option>
           </select>
-          <button class="hero-search-btn">Search Job</button>
+          <button class="hero-search-btn" onclick="searchSubmitHandler()">
+            Search Job
+          </button>
         </div>
         <div class="hero-trending-search">
           <h3 class="hero-trending-search-title">Trending Searches</h3>
@@ -216,6 +220,33 @@
       <!-- Hero Images End -->
     </div>
     <!-- #Hero Section Start -->
+
+    <!-- Hero Filtering Modal Start -->
+    <div id="hero-modal-container" class="hero-modal-container">
+      <div class="hero-modal">
+        <img
+          id="hero-modal-close-icon"
+          src="/images/menu-closed.png"
+          alt=""
+          class="hero-modal-close-icon"
+        />
+        <h3 class="hero-modal-title">Filtering Results</h3>
+        <table class="hero-modal-table">
+          <thead class="hero-modal-table-head">
+            <tr>
+              <th>Title</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Working Type</th>
+            </tr>
+          </thead>
+          <tbody id="hero-modal-table-body" class="hero-modal-table-body">
+            <!-- Data will be rendered here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Hero Filtering Modal End -->
 
     <script src="app.js"></script>
   </body>
