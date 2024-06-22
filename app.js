@@ -2,8 +2,49 @@ const mobilMenuIcon = document.querySelector("#hero-mobil-menu-icon");
 const mobilMenu = document.querySelector("#hero-mobil-menu");
 const hamburgerIcon = document.querySelector("#hero-hamburger-icon");
 const closeIcon = document.querySelector("#hero-close-icon");
+const heroWorkingModel = document.querySelector("#hero-job-type");
 
-// Mobil menu visibilty switcher function start
+// #Get all jops with api start
+
+const getAllJobs = async () => {
+  const response = await fetch(
+    "https://667681ab145714a1bd71f20d.mockapi.io/api/fake-data/jobs"
+  );
+
+  const fetchedData = await response.json();
+
+  return fetchedData;
+};
+// #Get all jops with api end
+
+// #Get working models start
+
+const getWorkingModels = async () => {
+  const allJobss = await getAllJobs();
+  const workingModels = await allJobss.map((workingModel) => {
+    return workingModel.working_model;
+  });
+
+  const cleanedWorkingModels = [...new Set(workingModels)];
+
+  return cleanedWorkingModels;
+};
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const wmodels = await getWorkingModels();
+  console.log(wmodels);
+
+  wmodels.forEach((item) => {
+    const optionElement = document.createElement("option");
+    optionElement.value = item.toLowerCase();
+    optionElement.textContent = item;
+    heroWorkingModel.appendChild(optionElement);
+  });
+});
+
+// #Get working model end
+
+// =>Mobil menu visibilty switcher function start
 const mobilMenuHandler = () => {
   if (mobilMenu.classList.contains("active")) {
     mobilMenu.classList.remove("active");
@@ -23,9 +64,9 @@ const mobilMenuHandler = () => {
     ? (hamburgerIcon.style.display = "none")
     : (hamburgerIcon.style.display = "block");
 };
-// Mobil menu visibilty changer function start
+// =>Mobil menu visibilty changer function start
 
-// Search functions start
+// !Search functions start
 
 const DUMMY_DATA = [
   {
@@ -102,62 +143,71 @@ const jobType = document.querySelector("#hero-job-type");
 const heroModalContainer = document.querySelector("#hero-modal-container");
 const heroModalBody = document.querySelector("#hero-modal-table-body");
 
-const searchSubmitHandler = () => {
+// =>Searching in all jobs start
+const searchSubmitHandler = async () => {
+  const allJobs = await getAllJobs();
+
   const searchTitle = titleSearh.value.trim().toLowerCase();
   const searchLocation = locationSearh.value.trim().toLowerCase();
-  const searchJobType = jobType.value.trim().toLowerCase();
+  const searchJobType = jobType.value;
 
-  const filteredJob = DUMMY_DATA.filter((job) => {
+  const filteredJob = await allJobs.filter((job) => {
     if (searchTitle && searchJobType === "default") {
-      //  Searching for only title or keyword
+      //  *Searching for only title or keyword
       return job.jobTitle.toLowerCase().includes(searchTitle.toLowerCase());
     } else if (searchTitle && searchJobType !== "default") {
-      //  Searching for title or keyword & job type
+      //  *Searching for title or keyword & job type
       return (
         job.jobTitle.toLowerCase().includes(searchTitle.toLowerCase()) &&
-        job.remotely == searchJobType
+        job.working_model.toLowerCase() == searchJobType
       );
     } else if (searchLocation && searchJobType === "default") {
-      //  Searching for only location
+      //  *Searching for only location
       return job.location.toLowerCase() === searchLocation.toLowerCase();
     } else if (searchLocation && searchJobType !== "default") {
-      //  Searching for location & job type
+      //  *Searching for location & job type
       return (
         job.location.toLowerCase() === searchLocation.toLowerCase() &&
-        job.remotely == searchJobType
+        job.working_model.toLowerCase() == searchJobType
       );
     } else if (!searchTitle && !searchLocation && searchJobType !== "default") {
-      //  Searching for only job type
-      return job.remotely === searchJobType;
+      //  *Searching for only job type
+      return job.working_model.toLowerCase() === searchJobType;
     }
   });
+
+  // =>Filtered result write to screen start
 
   heroModalBody.innerHTML = "";
 
   if (filteredJob.length === 0) {
     heroModalBody.innerHTML = `<tr><td colspan="4">No job found</td></tr>`;
   } else {
-    filteredJob.forEach((job) => {
-      const row = document.createElement("tr");
-
-      console.log(job);
-
-      for (const key in job) {
-        const value = document.createElement("td");
-        value.textContent = job[key];
-        row.appendChild(value);
-      }
-
-      heroModalBody.appendChild(row);
-    });
+    heroModalBody.innerHTML = filteredJob
+      .map(
+        (job) => `
+      <tr>
+      <td>${job.jobTitle}</td>
+      <td>${job.company}</td>
+      <td>${job.location}</td>
+      <td>${job.working_model}</td>
+      </tr>
+      `
+      )
+      .join("");
   }
 
   heroModalContainer.style.display = "flex";
+  // =>Filtered result write to screen end
 };
 
+// =>Searchin in all jobs end
+
+// =>Closing function to the modal start
 const heroCloseIcon = document.querySelector("#hero-modal-close-icon");
 heroCloseIcon.addEventListener("click", () => {
   heroModalContainer.style.display = "none";
 });
+// =>Closing function to the modal end
 
-// Search functions end
+// !Search functions end

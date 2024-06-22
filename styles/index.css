@@ -1,7 +1,4 @@
 /* Hero Section CSS Start */
-body {
-  overflow: hidden;
-}
 
 .hero-container {
   max-width: 1252px;
@@ -322,10 +319,16 @@ body {
   cursor: pointer;
 }
 
+.hero-modal-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 25px;
+}
+
 .hero-modal {
-  width: 950px;
+  max-width: 950px;
   background-color: #fff;
-  height: 350px;
+  min-height: max-content;
   border: none;
   box-shadow: 5px 5px 5px 5px #00000074;
   display: flex;
@@ -335,10 +338,12 @@ body {
   padding: 10px;
   position: absolute;
   top: 200px;
+  overflow: auto;
 }
 
 .hero-modal-table {
   border-spacing: 0;
+  white-space: nowrap;
 }
 
 .hero-modal-table-head > tr > th,
