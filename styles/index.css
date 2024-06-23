@@ -43,6 +43,7 @@
   align-items: center;
   color: #495263;
   cursor: pointer;
+  position: relative;
 }
 
 .hero-menu-arrow {
@@ -72,6 +73,37 @@
 
 .hero-create-btn:hover {
   background-color: #864db8d8;
+}
+
+.hero-menu-dropdown-item {
+  width: 210px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  align-items: start;
+  position: absolute;
+  top: 25px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  z-index: 1;
+  padding: 15px 3px;
+  border-radius: 10px;
+}
+
+.hero-menu-dropdown-item > a {
+  width: 100%;
+  text-decoration: none;
+  color: #000;
+  padding: 0 5px;
+  font-size: 17px;
+}
+
+.hero-menu-dropdown-item > a:hover {
+  background-color: #e7e7e7ae;
+}
+
+.hero-dropdown-show {
+  display: flex;
 }
 
 .hero-hamburger-menu {
@@ -124,13 +156,42 @@
 .hero-mobil-menu-item {
   font-size: 25px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: start;
   gap: 5px;
+  cursor: pointer;
 }
+
+.hero-mobil-submenu-item {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.hero-mobil-submenu-item:hover {
+  background-color: #e7e7e7ae;
+}
+
+.hero-mobil-dropdown-content {
+  display: none;
+}
+
+.hero-mobil-dropdown-show {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 25px;
+}
+
 .hero-menu-arrow {
   width: 14px;
   height: 6px;
 }
+
+.hero-menu-arrow-rotater {
+  transform: rotate(-90deg);
+  transition: transform 0.4s ease;
+}
+
 .hero-mobil-menu-accnt {
   margin-top: 45px;
   display: flex;
@@ -357,6 +418,12 @@
 
 .hero-modal-table-body > tr:hover {
   background-color: #03badfb4;
+}
+
+@media screen and (max-width: 1440px) {
+  .hero-hamburger-menu {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {

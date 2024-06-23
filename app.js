@@ -3,6 +3,8 @@ const mobilMenu = document.querySelector("#hero-mobil-menu");
 const hamburgerIcon = document.querySelector("#hero-hamburger-icon");
 const closeIcon = document.querySelector("#hero-close-icon");
 const heroWorkingModel = document.querySelector("#hero-job-type");
+const dropdowns = document.querySelectorAll(".dropdown");
+const mobilDropdowns = document.querySelectorAll(".hero-mobil-dropdown");
 
 // #Get all jops with api start
 
@@ -64,7 +66,16 @@ const mobilMenuHandler = () => {
     ? (hamburgerIcon.style.display = "none")
     : (hamburgerIcon.style.display = "block");
 };
-// =>Mobil menu visibilty changer function start
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024) {
+    mobilMenu.classList.remove("active");
+    hamburgerIcon.style.display = "";
+    closeIcon.style.display = "none";
+  }
+});
+
+// =>Mobil menu visibilty changer function end
 
 // !Search functions start
 
@@ -211,3 +222,79 @@ heroCloseIcon.addEventListener("click", () => {
 // =>Closing function to the modal end
 
 // !Search functions end
+
+// => Dropdown menu functions start
+
+// *Close dropdown menu
+const closeDropdownMenu = () => {
+  dropdowns.forEach((dropdown) => {
+    const heroDropDownMenu = dropdown.querySelector(".hero-menu-dropdown-item");
+    const heroMenuArrow = dropdown.querySelector("#hero-menu-arrow-img");
+    heroDropDownMenu.classList.remove("hero-dropdown-show");
+    heroMenuArrow.classList.remove("hero-menu-arrow-rotater");
+  });
+};
+
+// *Change visibilty dropdown menu
+dropdowns.forEach((dropdown) => {
+  const heroDropDownMenu = dropdown.querySelector(".hero-menu-dropdown-item");
+  const heroMenuArrow = dropdown.querySelector("#hero-menu-arrow-img");
+
+  dropdown.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeDropdownMenu();
+    heroDropDownMenu.classList.toggle("hero-dropdown-show");
+    heroMenuArrow.classList.toggle("hero-menu-arrow-rotater");
+  });
+});
+
+// *Close dropdown menu when click dropdown menu's outside
+window.addEventListener("click", (e) => {
+  !e.target.matches(".dropdown") ? closeDropdownMenu() : null;
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 1024) {
+    dropdowns.forEach((dropdown) => {
+      const heroDropDownMenu = dropdown.querySelector(
+        ".hero-menu-dropdown-item"
+      );
+      const heroMenuArrow = dropdown.querySelector("#hero-menu-arrow-img");
+      heroDropDownMenu.classList.remove("hero-dropdown-show");
+      heroMenuArrow.classList.remove("hero-menu-arrow-rotater");
+    });
+  }
+});
+
+// => Dropdown menu functions end
+
+// => Dropdown mobil menu functions start
+
+const closeMobilDropdownMenu = () => {
+  mobilDropdowns.forEach((mobilMenuDropdown) => {
+    const heroMobilDropdownContent = mobilMenuDropdown.querySelector(
+      ".hero-mobil-dropdown-content"
+    );
+    heroMobilDropdownContent.classList.remove("hero-mobil-dropdown-show");
+  });
+};
+
+mobilDropdowns.forEach((mobilMenuDropdown) => {
+  const heroMobilDropdownContent = mobilMenuDropdown.querySelector(
+    ".hero-mobil-dropdown-content"
+  );
+
+  mobilMenuDropdown.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("çalıştı");
+    closeMobilDropdownMenu();
+    heroMobilDropdownContent.classList.toggle("hero-mobil-dropdown-show");
+  });
+});
+
+// *Close dropdown menu when click dropdown mobil menu's outside
+window.addEventListener("click", (e) => {
+  !e.target.matches(".hero-mobil-dropdown") ? closeMobilDropdownMenu() : null;
+});
+
+// => Dropdown mobil menu functions end
