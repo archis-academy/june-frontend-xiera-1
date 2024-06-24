@@ -1,4 +1,7 @@
 /* Hero Section CSS Start */
+body {
+  overflow-x: hidden;
+}
 
 .hero-container {
   max-width: 1252px;

@@ -34,7 +34,6 @@ const getWorkingModels = async () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const wmodels = await getWorkingModels();
-  console.log(wmodels);
 
   wmodels.forEach((item) => {
     const optionElement = document.createElement("option");
@@ -286,7 +285,6 @@ mobilDropdowns.forEach((mobilMenuDropdown) => {
 
   mobilMenuDropdown.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("çalıştı");
     closeMobilDropdownMenu();
     heroMobilDropdownContent.classList.toggle("hero-mobil-dropdown-show");
   });
