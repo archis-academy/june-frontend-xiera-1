@@ -134,6 +134,34 @@ body {
   gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+}
+
+.jobs-popup {
+  background-color: white;
+  min-width: 400px;
+  height: 50vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* Blur efektinin üstünde kalması için */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opsiyonel: Popup menüye gölge ekler */
+  padding: 20px; /* Opsiyonel: İçerik etrafında boşluk ekler */
+  border-radius: 10px; /* Opsiyonel: Köşeleri yuvarlatır */
+}
+
+.featured-jobs-blur::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .jobs-vacancies .vacancies-card {
@@ -151,17 +179,41 @@ body {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
+.vc-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vc-header-content {
+  display: flex;
+  flex-direction: row;
+}
+
 .vc-header img {
-  float: left;
   width: 50px;
   height: 50px;
   margin-right: 15px;
 }
 
-.vc-header > span:first-of-type {
+.vc-company p {
   color: var(--fj-date-font-color);
   font-family: "Inter-Medium", sans-serif;
   font-size: 12px;
+}
+
+.popup-close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+
+.popup-close-btn:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 
 .vc-content {

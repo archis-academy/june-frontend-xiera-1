@@ -96,14 +96,19 @@ function loadVacancies(startIndex, endIndex) {
   jobsVacancies.innerHTML = "";
   for (let i = startIndex; i < endIndex && i < vacancies.length; i++) {
     jobsVacancies.innerHTML += `
-      <div class="vacancies-card">
+      <div class="vacancies-card" onclick="openPopup()">
         <div class="vc-header">
-          <img
-            src="./images/featured-jobs/company-logo/nike.svg"
-            alt="${vacancies[i].CompanyName} Logo"
+          <div class="vc-header-content">
+            <img
+              src="./images/featured-jobs/company-logo/nike.svg"
+              alt="${vacancies[i].CompanyName} Logo"
             />
-          <h3>${vacancies[i].CompanyName}</h3>
-          <span>${vacancies[i].PostedDate}</span>
+            <div class="vc-company"> <h3>${vacancies[i].CompanyName}</h3>
+            <p>${vacancies[i].PostedDate}</p></div>
+          </div>
+          <div class="popup-close">
+            <button class="popup-close-btn" onclick="closePopup()">X</button>
+          </div>
         </div>
         <div class="vc-content">
           <p>${vacancies[i].JobTitle}</p>
@@ -118,6 +123,9 @@ function loadVacancies(startIndex, endIndex) {
 }
 
 loadVacancies(0, itemsPerPage);
+
+let vacanciesCard = document.querySelector(".vacancies-card");
+let popupCloseBtn = document.querySelector(".popup-close-btn");
 
 rightArrow.addEventListener("click", () => {
   currentIndex += itemsPerPage;
@@ -134,3 +142,15 @@ leftArrow.addEventListener("click", () => {
   }
   loadVacancies(currentIndex, currentIndex + itemsPerPage);
 });
+
+function openPopup() {
+  vacanciesCard.classList.add("jobs-popup");
+  jobsVacancies.classList.add("featured-jobs-blur");
+  popupCloseBtn.style.display = "block";
+}
+
+function closePopup() {
+  jobsVacancies.classList.remove("featured-jobs-blur");
+  vacanciesCard.classList.remove("jobs-popup");
+  popupCloseBtn.style.display = "none";
+}
