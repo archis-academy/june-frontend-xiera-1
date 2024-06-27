@@ -62,23 +62,23 @@ const heroFormSubmit = document.querySelector("#hero-form");
 const formSubmitHandler = (e) => {
   e.preventDefault();
 
-  const useremail = document.querySelector("#hero-form-useremail").value.trim();
+  const userEmail = document.querySelector("#hero-form-email").value.trim();
   const password = document.querySelector("#hero-form-password").value.trim();
 
-  const validEmail = useremail.includes("@") ? useremail : false;
+  const validEmail = userEmail.includes("@") ? userEmail : false;
   const validPassword = password.length >= 8 ? password : false;
 
   // !Checking email and password
-  const emailErorr = document.querySelector("#hero-email-error");
-  const passwordErorr = document.querySelector("#hero-password-error");
+  const emailError = document.querySelector("#hero-email-error");
+  const passwordError = document.querySelector("#hero-password-error");
 
   !validEmail
-    ? emailErorr.classList.add("hero-error-show")
-    : emailErorr.classList.remove("hero-error-show");
+    ? emailError.classList.add("hero-error-show")
+    : emailError.classList.remove("hero-error-show");
 
   !validPassword
-    ? passwordErorr.classList.add("hero-error-show")
-    : passwordErorr.classList.remove("hero-error-show");
+    ? passwordError.classList.add("hero-error-show")
+    : passwordError.classList.remove("hero-error-show");
 
   return validEmail && validPassword;
 };

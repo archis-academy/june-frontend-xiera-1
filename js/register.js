@@ -62,44 +62,44 @@ const heroFormSubmit = document.querySelector("#hero-form");
 const formRegisterSubmitHandler = (e) => {
   e.preventDefault();
 
-  const useremail = document.querySelector("#hero-form-useremail").value.trim();
-  const confirmUseremail = document
-    .querySelector("#hero-form-confirm-useremail")
+  const userEmail = document.querySelector("#hero-form-email").value.trim();
+  const confirmUserEmail = document
+    .querySelector("#hero-form-confirm-email")
     .value.trim();
   const password = document.querySelector("#hero-form-password").value.trim();
   const confirmPassword = document
     .querySelector("#hero-form-confirm-password")
     .value.trim();
 
-  const validEmail = useremail.includes("@") ? useremail : false;
-  const validConfirmEmail = useremail === confirmUseremail ? validEmail : false;
+  const validEmail = userEmail.includes("@") ? userEmail : false;
+  const validConfirmEmail = userEmail === confirmUserEmail ? validEmail : false;
   const validPassword = password.length >= 8 ? password : false;
   const validConfirmPassword =
     password === confirmPassword ? validPassword : false;
 
   // !Checking email and password
-  const emailErorr = document.querySelector("#hero-email-error");
-  const confirmEmailErorr = document.querySelector("#hero-email-confirm-error");
-  const passwordErorr = document.querySelector("#hero-password-error");
-  const confirmPasswordErorr = document.querySelector(
+  const emailError = document.querySelector("#hero-email-error");
+  const confirmEmailError = document.querySelector("#hero-email-confirm-error");
+  const passwordError = document.querySelector("#hero-password-error");
+  const confirmPasswordError = document.querySelector(
     "#hero-password-confirm-error"
   );
 
   !validEmail
-    ? emailErorr.classList.add("hero-error-show")
-    : emailErorr.classList.remove("hero-error-show");
+    ? emailError.classList.add("hero-error-show")
+    : emailError.classList.remove("hero-error-show");
 
   !validConfirmEmail
-    ? confirmEmailErorr.classList.add("hero-error-show")
-    : confirmEmailErorr.classList.remove("hero-error-show");
+    ? confirmEmailError.classList.add("hero-error-show")
+    : confirmEmailError.classList.remove("hero-error-show");
 
   !validPassword
-    ? passwordErorr.classList.add("hero-error-show")
-    : passwordErorr.classList.remove("hero-error-show");
+    ? passwordError.classList.add("hero-error-show")
+    : passwordError.classList.remove("hero-error-show");
 
   !validConfirmPassword
-    ? confirmPasswordErorr.classList.add("hero-error-show")
-    : confirmPasswordErorr.classList.remove("hero-error-show");
+    ? confirmPasswordError.classList.add("hero-error-show")
+    : confirmPasswordError.classList.remove("hero-error-show");
 
   return validEmail && validPassword;
 };
