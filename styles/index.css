@@ -412,6 +412,7 @@ body {
 
 .hero-modal-table-head > tr > th,
 .hero-modal-table-body > tr > td {
+  font-size: clamp(10px, 3vw, 17px);
   width: 360px;
   padding: 10px 0px;
   text-align: center;

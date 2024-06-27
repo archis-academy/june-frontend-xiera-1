@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="login-container">
+        <div class="circle circle-one"></div>
+        <div class="form-container">
+          <img src="/images/saly.png" alt="illustration" class="illustration" />
+          <h1 class="opacity">LOGIN</h1>
+          <form id="hero-form" onsubmit="formSubmitHandler(event)" novalidate>
+            <div class="form-item">
+              <input
+                id="hero-form-useremail"
+                type="email"
+                placeholder="your email..."
+              />
+              <span id="hero-email-error" class="hero-email-error"
+                >Please enter the valid email</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                id="hero-form-password"
+                type="password"
+                placeholder="your password..."
+              />
+              <span id="hero-password-error" class="hero-password-error"
+                >Password should be 8 chracters or than more</span
+              >
+            </div>
+
+            <button type="submit" class="opacity">Log in</button>
+          </form>
+          <div class="register-forget opacity">
+            <a href="/register.html">Register</a>
+            <a href="">Forgot password?</a>
+          </div>
+          <span class="hero-general-error"></span>
+        </div>
+        <div class="circle circle-two"></div>
+      </div>
+      <div class="theme-btn-container"></div>
+    </section>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>
