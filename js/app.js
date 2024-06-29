@@ -50,11 +50,11 @@ const mobilMenuHandler = () => {
   if (mobilMenu.classList.contains("active")) {
     mobilMenu.classList.remove("active");
     setTimeout(() => {
-      mobilMenu.style.visibilty = "hidden";
+      mobilMenu.style.visibility = "hidden";
     }, 300);
   } else {
     mobilMenu.classList.add("active");
-    mobilMenu.style.visibilty = "visible";
+    mobilMenu.style.visibility = "visible";
   }
 
   mobilMenu.classList.contains("active")
@@ -74,81 +74,12 @@ window.addEventListener("resize", () => {
   }
 });
 
-// =>Mobil menu visibilty changer function end
+// =>Mobil menu visibility changer function end
 
 // !Search functions start
 
-const DUMMY_DATA = [
-  {
-    jobTitle: "Remote JAVA Developer",
-    company: "ABC Company",
-    location: "Istanbul",
-    remotely: "remotely",
-  },
-  {
-    jobTitle: "Senior Frontend Developer",
-    company: "XYZ Tech",
-    location: "Ankara",
-    remotely: "office",
-  },
-  {
-    jobTitle: "Data Scientist",
-    company: "DataInsights",
-    location: "Izmir",
-    remotely: "office",
-  },
-  {
-    jobTitle: "DevOps Engineer",
-    company: "CloudWorks",
-    location: "Bursa",
-    remotely: "hibrit",
-  },
-  {
-    jobTitle: "Full Stack Developer",
-    company: "Web Innovations",
-    location: "Antalya",
-    remotely: "remotely",
-  },
-  {
-    jobTitle: "Mobile App Developer",
-    company: "AppMasters",
-    location: "Konya",
-    remotely: "hibrit",
-  },
-  {
-    jobTitle: "Backend Developer",
-    company: "CodeCrafters",
-    location: "Gaziantep",
-    remotely: "remotely",
-  },
-  {
-    jobTitle: "UI/UX Designer",
-    company: "Creative Minds",
-    location: "Adana",
-    remotely: "office",
-  },
-  {
-    jobTitle: "Software Engineer",
-    company: "Innovatech",
-    location: "Samsun",
-    remotely: "hibrit",
-  },
-  {
-    jobTitle: "Cybersecurity Analyst",
-    company: "SecureNet",
-    location: "Kayseri",
-    remotely: "remotely",
-  },
-  {
-    jobTitle: "Machine Learning Engineer",
-    company: "AI Solutions",
-    location: "Trabzon",
-    remotely: "hibrit",
-  },
-];
-
-const titleSearh = document.querySelector(".hero-title-search");
-const locationSearh = document.querySelector(".hero-location-search");
+const titleSearch = document.querySelector(".hero-title-search");
+const locationSearch = document.querySelector(".hero-location-search");
 const jobType = document.querySelector("#hero-job-type");
 const heroModalContainer = document.querySelector("#hero-modal-container");
 const heroModalBody = document.querySelector("#hero-modal-table-body");
@@ -157,33 +88,23 @@ const heroModalBody = document.querySelector("#hero-modal-table-body");
 const searchSubmitHandler = async () => {
   const allJobs = await getAllJobs();
 
-  const searchTitle = titleSearh.value.trim().toLowerCase();
-  const searchLocation = locationSearh.value.trim().toLowerCase();
+  const searchTitle = titleSearch.value.trim().toLowerCase();
+  const searchLocation = locationSearch.value.trim().toLowerCase();
   const searchJobType = jobType.value;
 
   const filteredJob = await allJobs.filter((job) => {
-    if (searchTitle && searchJobType === "default") {
-      //  *Searching for only title or keyword
-      return job.jobTitle.toLowerCase().includes(searchTitle.toLowerCase());
-    } else if (searchTitle && searchJobType !== "default") {
-      //  *Searching for title or keyword & job type
-      return (
-        job.jobTitle.toLowerCase().includes(searchTitle.toLowerCase()) &&
-        job.working_model.toLowerCase() == searchJobType
-      );
-    } else if (searchLocation && searchJobType === "default") {
-      //  *Searching for only location
-      return job.location.toLowerCase() === searchLocation.toLowerCase();
-    } else if (searchLocation && searchJobType !== "default") {
-      //  *Searching for location & job type
-      return (
-        job.location.toLowerCase() === searchLocation.toLowerCase() &&
-        job.working_model.toLowerCase() == searchJobType
-      );
-    } else if (!searchTitle && !searchLocation && searchJobType !== "default") {
-      //  *Searching for only job type
-      return job.working_model.toLowerCase() === searchJobType;
-    }
+    const jobTitleMatches = searchTitle
+      ? job.jobTitle.toLowerCase().includes(searchTitle)
+      : true;
+    const jobLocationMatches = searchLocation
+      ? job.location.toLowerCase() === searchLocation
+      : true;
+    const jobTypeMatches =
+      searchJobType !== "default"
+        ? job.working_model.toLowerCase() === searchJobType
+        : true;
+
+    return jobTitleMatches && jobLocationMatches && jobTypeMatches;
   });
 
   // =>Filtered result write to screen start
@@ -211,7 +132,7 @@ const searchSubmitHandler = async () => {
   // =>Filtered result write to screen end
 };
 
-// =>Searchin in all jobs end
+// =>Searching in all jobs end
 
 // =>Closing function to the modal start
 const heroCloseIcon = document.querySelector("#hero-modal-close-icon");
@@ -230,11 +151,11 @@ const closeDropdownMenu = () => {
     const heroDropDownMenu = dropdown.querySelector(".hero-menu-dropdown-item");
     const heroMenuArrow = dropdown.querySelector("#hero-menu-arrow-img");
     heroDropDownMenu.classList.remove("hero-dropdown-show");
-    heroMenuArrow.classList.remove("hero-menu-arrow-rotater");
+    heroMenuArrow.classList.remove("hero-menu-arrow-rotator");
   });
 };
 
-// *Change visibilty dropdown menu
+// *Change visibility dropdown menu
 dropdowns.forEach((dropdown) => {
   const heroDropDownMenu = dropdown.querySelector(".hero-menu-dropdown-item");
   const heroMenuArrow = dropdown.querySelector("#hero-menu-arrow-img");
@@ -243,7 +164,7 @@ dropdowns.forEach((dropdown) => {
     e.preventDefault();
     closeDropdownMenu();
     heroDropDownMenu.classList.toggle("hero-dropdown-show");
-    heroMenuArrow.classList.toggle("hero-menu-arrow-rotater");
+    heroMenuArrow.classList.toggle("hero-menu-arrow-rotator");
   });
 });
 
@@ -260,7 +181,7 @@ window.addEventListener("resize", () => {
       );
       const heroMenuArrow = dropdown.querySelector("#hero-menu-arrow-img");
       heroDropDownMenu.classList.remove("hero-dropdown-show");
-      heroMenuArrow.classList.remove("hero-menu-arrow-rotater");
+      heroMenuArrow.classList.remove("hero-menu-arrow-rotator");
     });
   }
 });
