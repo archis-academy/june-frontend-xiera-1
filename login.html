@@ -13,20 +13,20 @@
         <div class="form-container">
           <img src="/images/saly.png" alt="illustration" class="illustration" />
           <h1 class="opacity">LOGIN</h1>
-          <form id="hero-form" onsubmit="formSubmitHandler(event)" novalidate>
+          <form
+            id="hero-login-form"
+            onsubmit="formSubmitHandler(event)"
+            novalidate
+          >
             <div class="form-item">
-              <input
-                id="hero-form-useremail"
-                type="email"
-                placeholder="your email..."
-              />
+              <input name="email" type="email" placeholder="your email..." />
               <span id="hero-email-error" class="hero-email-error"
                 >Please enter the valid email</span
               >
             </div>
             <div class="form-item">
               <input
-                id="hero-form-password"
+                name="password"
                 type="password"
                 placeholder="your password..."
               />

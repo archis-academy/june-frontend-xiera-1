@@ -61,6 +61,15 @@ body {
   font-size: 17px;
 }
 
+#hero-user-entered {
+  display: none;
+}
+
+#user-info {
+  font-size: clamp(10px, 4vw, 14px);
+  margin-right: 10px;
+}
+
 .hero-log-in-btn {
   font-weight: bold;
   color: #28344a;
@@ -190,7 +199,7 @@ body {
   height: 6px;
 }
 
-.hero-menu-arrow-rotater {
+.hero-menu-arrow-rotator {
   transform: rotate(-90deg);
   transition: transform 0.4s ease;
 }
@@ -377,9 +386,8 @@ body {
 .hero-modal-close-icon {
   width: 25px;
   height: 25px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  align-self: flex-end;
+  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -397,7 +405,7 @@ body {
   box-shadow: 5px 5px 5px 5px #00000074;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
   align-items: center;
   padding: 10px;
   position: absolute;

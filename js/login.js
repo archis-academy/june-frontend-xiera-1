@@ -57,30 +57,67 @@ displayThemeButtons();
 
 // # Form submit functions start
 
-const heroFormSubmit = document.querySelector("#hero-form");
+const heroFormSubmit = document.querySelector("#hero-login-form");
+
+// *Get User
+
+const getUserToLocalStorage = (user) => {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const userObject = users.filter((item) => item.email === user.email);
+
+  return userObject[0];
+};
+
+// *Entering user
 
 const formSubmitHandler = (e) => {
   e.preventDefault();
 
-  const useremail = document.querySelector("#hero-form-useremail").value.trim();
-  const password = document.querySelector("#hero-form-password").value.trim();
+  const loginForm = {};
 
-  const validEmail = useremail.includes("@") ? useremail : false;
+  const loginFormData = new FormData(heroFormSubmit);
+
+  loginFormData.forEach((value, key) => (loginForm[key] = value));
+
+  const userEmail = loginForm.email.trim();
+  const password = loginForm.password.trim();
+
+  const validEmail = userEmail.includes("@") ? userEmail : false;
   const validPassword = password.length >= 8 ? password : false;
 
   // !Checking email and password
-  const emailErorr = document.querySelector("#hero-email-error");
-  const passwordErorr = document.querySelector("#hero-password-error");
+  const emailError = document.querySelector("#hero-email-error");
+  const passwordError = document.querySelector("#hero-password-error");
 
   !validEmail
-    ? emailErorr.classList.add("hero-error-show")
-    : emailErorr.classList.remove("hero-error-show");
+    ? emailError.classList.add("hero-error-show")
+    : emailError.classList.remove("hero-error-show");
 
   !validPassword
-    ? passwordErorr.classList.add("hero-error-show")
-    : passwordErorr.classList.remove("hero-error-show");
+    ? passwordError.classList.add("hero-error-show")
+    : passwordError.classList.remove("hero-error-show");
 
-  return validEmail && validPassword;
+  const newUser = {
+    email: validEmail,
+    password: validPassword,
+  };
+
+  const enteredUser =
+    newUser.email && newUser.password ? getUserToLocalStorage(newUser) : null;
+
+  console.log(enteredUser);
+  if (
+    enteredUser.email === newUser.email &&
+    enteredUser.password === newUser.password
+  ) {
+    enteredUser.isAuth = true;
+    localStorage.setItem("user", JSON.stringify(enteredUser));
+
+    window.location.href = "index.html";
+  } else {
+    console.log("Failed to log in ");
+  }
 };
 
 // # Form submit functions end
