@@ -138,9 +138,9 @@ const loginAlert = (alertType) => {
       color: "#fff",
     });
 
-    // setTimeout(() => {
-    //   window.location.href = "/index.html";
-    // }, 2500);
+    setTimeout(() => {
+      window.location.href = "/index.html";
+    }, 2000);
   } else {
     Swal.fire({
       title: "Login failed",
