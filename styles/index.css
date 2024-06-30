@@ -204,9 +204,17 @@ body {
   transition: transform 0.4s ease;
 }
 
-.hero-mobil-menu-accnt {
+.hero-mobil-menu-entering-accnt {
   margin-top: 45px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-mobil-menu-entered-accnt {
+  margin-top: 45px;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 50px;

@@ -112,7 +112,6 @@ const formSubmitHandler = (e) => {
       ? getUserToLocalStorage(newUser)
       : { email: "", password: "" };
 
-  console.log(enteredUser);
   if (
     enteredUser.email === newUser.email &&
     enteredUser.password === newUser.password

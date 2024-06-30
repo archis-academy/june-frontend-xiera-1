@@ -220,9 +220,14 @@ window.addEventListener("click", (e) => {
 
 // => User functions start
 
+// * General screen
 const enteringUser = document.querySelector("#hero-user-entering");
 const enteredUser = document.querySelector("#hero-user-entered");
 const userInfo = document.querySelector("#user-info");
+// *Mobil screen
+const enteringUserMobil = document.querySelector("#hero-user-mobil-entering");
+const enteredUserMobil = document.querySelector("#hero-user-mobil-entered");
+const userInfoMobil = document.querySelector("#user-mobil-info");
 
 // *Get single user
 const getEnteredUserToLocalStorage = () => {
@@ -232,13 +237,19 @@ const getEnteredUserToLocalStorage = () => {
 };
 
 // *When load the page checking the user
+
 window.onload = function () {
   const user = getEnteredUserToLocalStorage();
 
-  user !== null ? (enteringUser.style.display = "none") : "";
-  user !== null ? (enteredUser.style.display = "flex") : "";
+  user !== null && user.isAuth ? (enteringUser.style.display = "none") : "";
+  user !== null && user.isAuth ? (enteredUser.style.display = "flex") : "";
+  user !== null && user.isAuth
+    ? (enteringUserMobil.style.display = "none")
+    : "";
+  user !== null && user.isAuth ? (enteredUserMobil.style.display = "flex") : "";
 
   userInfo.textContent = `${user.email}`;
+  userInfoMobil.textContent = `${user.email}`;
 };
 
 const logOut = () => {
