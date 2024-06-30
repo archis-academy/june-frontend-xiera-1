@@ -68,6 +68,8 @@ const saveUserToLocalStorage = (user) => {
   localStorage.setItem("users", JSON.stringify(users));
 
   heroFormSubmit.reset();
+
+  return true;
 };
 
 // => Get user information and validation
@@ -123,7 +125,38 @@ const formRegisterSubmitHandler = (e) => {
     password: validConfirmPassword,
   };
 
-  newUser.email && newUser.password ? saveUserToLocalStorage(newUser) : null;
+  const isUser =
+    newUser.email && newUser.password ? saveUserToLocalStorage(newUser) : null;
+
+  isUser ? registeringAlert("success") : registeringAlert("error");
+};
+
+const registeringAlert = (alertType) => {
+  if (alertType === "success") {
+    Swal.fire({
+      title: "Registration was successful",
+      text: "Please hold, you are being redirected",
+      icon: "success",
+      showCloseButton: true,
+      showConfirmButton: false,
+      background: "#1A1A2E",
+      color: "#fff",
+    });
+
+    setTimeout(() => {
+      window.location.href = "/login.html";
+    }, 2500);
+  } else {
+    Swal.fire({
+      title: "Failed to create record",
+      text: "Please check your entries",
+      icon: "error",
+      showCloseButton: true,
+      showConfirmButton: false,
+      background: "#1A1A2E",
+      color: "#fff",
+    });
+  }
 };
 
 // # Form submit functions end

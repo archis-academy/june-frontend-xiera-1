@@ -66,7 +66,11 @@ const getUserToLocalStorage = (user) => {
 
   const userObject = users.filter((item) => item.email === user.email);
 
-  return userObject[0];
+  const result = userObject.length
+    ? userObject[0]
+    : { email: "", password: "" };
+
+  return result;
 };
 
 // *Entering user
@@ -104,7 +108,9 @@ const formSubmitHandler = (e) => {
   };
 
   const enteredUser =
-    newUser.email && newUser.password ? getUserToLocalStorage(newUser) : null;
+    newUser.email && newUser.password
+      ? getUserToLocalStorage(newUser)
+      : { email: "", password: "" };
 
   console.log(enteredUser);
   if (
@@ -114,9 +120,37 @@ const formSubmitHandler = (e) => {
     enteredUser.isAuth = true;
     localStorage.setItem("user", JSON.stringify(enteredUser));
 
-    window.location.href = "index.html";
+    loginAlert("success");
   } else {
-    console.log("Failed to log in ");
+    loginAlert("error");
+  }
+};
+
+const loginAlert = (alertType) => {
+  if (alertType === "success") {
+    Swal.fire({
+      title: "Login was successful",
+      text: "Please hold, you are being redirected",
+      icon: "success",
+      showCloseButton: true,
+      showConfirmButton: false,
+      background: "#1A1A2E",
+      color: "#fff",
+    });
+
+    // setTimeout(() => {
+    //   window.location.href = "/index.html";
+    // }, 2500);
+  } else {
+    Swal.fire({
+      title: "Login failed",
+      text: "Please check your email and password",
+      icon: "error",
+      showCloseButton: true,
+      showConfirmButton: false,
+      background: "#1A1A2E",
+      color: "#fff",
+    });
   }
 };
 
