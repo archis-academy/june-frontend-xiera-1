@@ -145,10 +145,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3; /* Blur efektinin üstünde kalması için */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opsiyonel: Popup menüye gölge ekler */
-  padding: 20px; /* Opsiyonel: İçerik etrafında boşluk ekler */
-  border-radius: 10px; /* Opsiyonel: Köşeleri yuvarlatır */
+  z-index: 3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .featured-jobs-blur::before {
@@ -173,6 +173,16 @@ body {
   transition: 0.3s ease;
   font-family: "Inter-Semibold", sans-serif;
   cursor: pointer;
+  display: none;
+}
+
+.jobs-vacancies .vacancies-card:nth-child(1),
+.jobs-vacancies .vacancies-card:nth-child(2),
+.jobs-vacancies .vacancies-card:nth-child(3),
+.jobs-vacancies .vacancies-card:nth-child(4),
+.jobs-vacancies .vacancies-card:nth-child(5),
+.jobs-vacancies .vacancies-card:nth-child(6) {
+  display: inline-block;
 }
 
 .jobs-vacancies .vacancies-card:hover {
@@ -254,6 +264,7 @@ body {
   justify-content: center;
   border-radius: 50px;
   border: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1078px) {
