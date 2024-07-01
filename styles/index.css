@@ -397,6 +397,8 @@ body {
   align-self: flex-end;
   margin-right: 10px;
   cursor: pointer;
+  align-self: flex-end;
+  margin-right: 10px;
 }
 
 .hero-modal-title {
