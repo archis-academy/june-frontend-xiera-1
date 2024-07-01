@@ -394,9 +394,14 @@ body {
 .hero-modal-close-icon {
   width: 25px;
   height: 25px;
+<<<<<<< HEAD
   align-self: flex-end;
   margin-right: 10px;
+=======
+>>>>>>> master
   cursor: pointer;
+  align-self: flex-end;
+  margin-right: 10px;
 }
 
 .hero-modal-title {

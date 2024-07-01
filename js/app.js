@@ -132,7 +132,7 @@ const searchSubmitHandler = async () => {
   // =>Filtered result write to screen end
 };
 
-// =>Searchin in all jobs end
+// =>Searching in all jobs end
 
 // =>Closing function to the modal start
 const heroCloseIcon = document.querySelector("#hero-modal-close-icon");
