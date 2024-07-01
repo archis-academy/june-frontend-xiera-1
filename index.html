@@ -5,8 +5,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xiera</title>
     <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/shared.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cd7b1b5648.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <script src="app.js"></script>
+    <!-- #Hero Section Start -->
+    <div class="hero-container">
+      <!-- =>Navbar Start -->
+      <nav class="hero-nav">
+        <div class="hero-nav-logo">
+          <a href="#" class="hero-logo-link"
+            ><img
+              src="/images/xiera-logo.png"
+              alt="xiera logo"
+              class="hero-logo"
+          /></a>
+        </div>
+
+        <div class="hero-nav-menu">
+          <ul class="hero-menu-items">
+            <li class="hero-menu-item dropdown">
+              Find Jobs
+              <img
+                id="hero-menu-arrow-img"
+                src="/images/bottom-arrow.png"
+                alt="bottom arrow"
+                class="hero-menu-arrow"
+              />
+              <div class="hero-menu-dropdown-item">
+                <a href="#" class="hero-dropdown-link">Frontend Developer</a>
+                <a href="#" class="hero-dropdown-link">Backend Developer</a>
+                <a href="#" class="hero-dropdown-link">Fullstack Developer</a>
+                <a href="#" class="hero-dropdown-link">UI/UX Designer</a>
+              </div>
+            </li>
+            <li class="hero-menu-item dropdown">
+              Recent Posts
+              <img
+                id="hero-menu-arrow-img"
+                src="/images/bottom-arrow.png"
+                alt="bottom arrow"
+                class="hero-menu-arrow"
+              />
+              <div class="hero-menu-dropdown-item">
+                <a href="#" class="hero-dropdown-link">Last 5 Post</a>
+                <a href="#" class="hero-dropdown-link">Last 10 Posts</a>
+                <a href="#" class="hero-dropdown-link">All Posts</a>
+              </div>
+            </li>
+            <li class="hero-menu-item dropdown">
+              Company
+              <img
+                id="hero-menu-arrow-img"
+                src="/images/bottom-arrow.png"
+                alt="bottom arrow"
+                class="hero-menu-arrow"
+              />
+              <div class="hero-menu-dropdown-item">
+                <a href="#" class="hero-dropdown-link">Best 5 Companies</a>
+                <a href="#" class="hero-dropdown-link">Best 10 Companies</a>
+                <a href="#" class="hero-dropdown-link">All Companies</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="hero-menu-accnt">
+            <li class="hero-menu-accnt-item">
+              <a href="#" class="hero-log-in-btn">Log in</a>
+            </li>
+            <li class="hero-menu-accnt-item">
+              <a href="#" class="hero-create-btn">Create Account</a>
+            </li>
+          </ul>
+        </div>
+        <div
+          id="hero-mobil-menu-icon"
+          class="hero-hamburger-menu"
+          onclick="mobilMenuHandler()"
+        >
+          <img
+            id="hero-hamburger-icon"
+            src="/images/hamburger-menu.png"
+            alt="hamburger menu icon"
+            class="hero-hamburger-icon-img"
+          />
+          <img
+            id="hero-close-icon"
+            src="/images/menu-closed.png"
+            alt="menu closed image"
+            class="hero-hamburger-closed-icon"
+          />
+        </div>
+        <!-- *Mobil Menu Start -->
+        <div id="hero-mobil-menu" class="hero-mobil-menu">
+          <ul class="hero-mobil-menu-accnt">
+            <li class="hero-mobil-menu-accnt-item">
+              <a href="#" class="hero-log-in-btn">Log in</a>
+            </li>
+            <li class="hero-mobil-menu-accnt-item">
+              <a href="#" class="hero-create-btn">Create Account</a>
+            </li>
+          </ul>
+          <ul class="hero-mobil-menu-items">
+            <li class="hero-mobil-menu-item hero-mobil-dropdown">
+              Find Jobs
+              <ul class="hero-mobil-dropdown-content">
+                <li class="hero-mobil-submenu-item">Frontend Developer</li>
+                <li class="hero-mobil-submenu-item">Backend Developer</li>
+                <li class="hero-mobil-submenu-item">Fullstack Developer</li>
+                <li class="hero-mobil-submenu-item">UI/UX Designer</li>
+              </ul>
+            </li>
+            <li class="hero-mobil-menu-item hero-mobil-dropdown">
+              Recent Posts
+              <ul class="hero-mobil-dropdown-content">
+                <li class="hero-mobil-submenu-item">Last 5 Posts</li>
+                <li class="hero-mobil-submenu-item">Last 10 Posts</li>
+                <li class="hero-mobil-submenu-item">All Posts</li>
+              </ul>
+            </li>
+            <li class="hero-mobil-menu-item hero-mobil-dropdown">
+              Company
+              <ul class="hero-mobil-dropdown-content">
+                <li class="hero-mobil-submenu-item">Best 5 Companies</li>
+                <li class="hero-mobil-submenu-item">Best 10 Companies</li>
+                <li class="hero-mobil-submenu-item">All Companies</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- *Mobil Menu End -->
+      </nav>
+      <!-- =>Navbar End -->
+      <!-- =>Hero Content Start -->
+      <div class="hero-title-section">
+        <h1 class="hero-title">
+          The home of your dream j<img
+            src="/images/title-o.png"
+            alt="title o letter"
+            class="hero-title-o-letter"
+          />b
+        </h1>
+        <h4 class="hero-subtitle">
+          You do not have the right to remain silent… let us know what it takes
+          to challenge you
+        </h4>
+      </div>
+      <!-- =>Hero Content End -->
+      <!-- =>Hero Search Bar Start -->
+      <div class="hero-search">
+        <div class="hero-search-items">
+          <div class="hero-search-title-box">
+            <img
+              src="/images/magnifying-glass-solid.svg"
+              alt="search icon"
+              class="hero-search-icon"
+            />
+            <input
+              type="text"
+              class="hero-title-search"
+              placeholder="Job Title or keyworld"
+            />
+          </div>
+          <div class="hero-search-location-box">
+            <img
+              src="/images/location-dot-solid.svg"
+              alt="location icon"
+              class="hero-location-icon"
+            />
+            <input
+              type="text"
+              class="hero-location-search"
+              placeholder="Location"
+            />
+          </div>
+
+          <select
+            name="hero-job-type"
+            id="hero-job-type"
+            class="hero-search-select"
+          >
+            <option value="default">Pick a model</option>
+          </select>
+          <button class="hero-search-btn" onclick="searchSubmitHandler()">
+            Search Job
+          </button>
+        </div>
+        <div class="hero-trending-search">
+          <h3 class="hero-trending-search-title">Trending Searches</h3>
+          <ul class="hero-trending-search-list">
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Remote Job</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">UI/UX Design</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Product Design</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Development</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Work from Home</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- =>Hero Search Bar End -->
+      <!-- =>Hero Images Start -->
+      <img src="/images/saly.png" alt="sally images" class="hero-sally-img" />
+      <img
+        src="/images/doodle.png"
+        alt="Doodle images"
+        class="hero-doodle-img"
+      />
+      <img src="/images/bety.png" alt="Bety image" class="hero-bety-img" />
+      <img
+        src="/images/rainbow.png"
+        alt="Bety image"
+        class="hero-rainbow-img"
+      />
+      <!-- =>Hero Images End -->
+    </div>
+    <!-- #Hero Section Start -->
+
+    <!-- =>Hero Filtering Modal Start -->
+    <div id="hero-modal-container" class="hero-modal-container">
+      <div class="hero-modal">
+        <img
+          id="hero-modal-close-icon"
+          src="/images/menu-closed.png"
+          alt=""
+          class="hero-modal-close-icon"
+        />
+        <h3 class="hero-modal-title">Filtering Results</h3>
+        <table class="hero-modal-table">
+          <thead class="hero-modal-table-head">
+            <tr>
+              <th>Title</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Working Type</th>
+            </tr>
+          </thead>
+          <tbody id="hero-modal-table-body" class="hero-modal-table-body">
+            <!-- Data will be rendered here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- =>Hero Filtering Modal End -->
+
+    <script src="/js/app.js"></script>
   </body>
 </html>
