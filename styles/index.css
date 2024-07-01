@@ -170,10 +170,18 @@ body {
   min-height: 320px;
   border-radius: 20px;
   padding: 30px;
-  transition: 0.3s ease;
   font-family: "Inter-Semibold", sans-serif;
   cursor: pointer;
-  display: none;
+}
+
+.vacancies-card-popup {
+  background-color: white;
+  min-height: 320px;
+  max-width: 450px;
+  border-radius: 20px;
+  padding: 30px;
+  font-family: "Inter-Semibold", sans-serif;
+  cursor: pointer;
 }
 
 .jobs-vacancies .vacancies-card:nth-child(1),
@@ -218,7 +226,6 @@ body {
   font-weight: bold;
   font-size: 15px;
   border: none;
-  display: none;
   cursor: pointer;
 }
 
@@ -227,8 +234,11 @@ body {
 }
 
 .vc-content {
-  margin: 40px 20px;
   font-size: 24px;
+  margin: 20px 20px;
+}
+
+.vc-info {
 }
 
 .vc-info > :first-child {

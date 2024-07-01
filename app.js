@@ -1,7 +1,8 @@
 const vacancies = [
   {
     id: 1,
-    JobTitle: "Senior UX/UI Developer with strong Designer skills",
+    JobTitle:
+      "Senior UX/UI Developer with strong Designer skills, responsible for creating visually appealing and user-friendly interfaces, working closely with the development team to ensure seamless integration of design elements",
     CompanyName: "Gucci",
     PostedDate: "5 days ago",
     Location: "Oslo, Norway",
@@ -9,7 +10,8 @@ const vacancies = [
   },
   {
     id: 2,
-    JobTitle: "Experienced Frontend Developer with a Focus on Accessibility",
+    JobTitle:
+      "Experienced Frontend Developer with a Focus on Accessibility, tasked with building responsive web applications that adhere to accessibility standards, ensuring all users have a great experience",
     CompanyName: "Apple",
     PostedDate: "2 days ago",
     Location: "Oslo, Norway",
@@ -17,7 +19,8 @@ const vacancies = [
   },
   {
     id: 3,
-    JobTitle: "Backend Developer Specializing in Microservices Architecture",
+    JobTitle:
+      "Backend Developer Specializing in Microservices Architecture, responsible for designing and implementing scalable backend services, optimizing performance, and ensuring reliability",
     CompanyName: "Microsoft",
     PostedDate: "1 week ago",
     Location: "Redmond, WA",
@@ -25,7 +28,8 @@ const vacancies = [
   },
   {
     id: 4,
-    JobTitle: "Full Stack Developer with Expertise in Cloud Technologies",
+    JobTitle:
+      "Full Stack Developer with Expertise in Cloud Technologies, responsible for developing and maintaining web applications using cloud services, ensuring high availability and scalability",
     CompanyName: "Google",
     PostedDate: "3 days ago",
     Location: "Oslo, Norway",
@@ -33,7 +37,8 @@ const vacancies = [
   },
   {
     id: 5,
-    JobTitle: "Product Designer with a Strong Background in User Research",
+    JobTitle:
+      "Product Designer with a Strong Background in User Research, focusing on gathering user insights to inform design decisions, creating prototypes, and collaborating with cross-functional teams",
     CompanyName: "Facebook",
     PostedDate: "4 days ago",
     Location: "Menlo Park, CA",
@@ -41,7 +46,8 @@ const vacancies = [
   },
   {
     id: 6,
-    JobTitle: "UX Researcher Focused on Improving User Engagement",
+    JobTitle:
+      "UX Researcher Focused on Improving User Engagement, conducting user studies and data analysis to understand user behavior, and providing actionable insights to enhance user experience",
     CompanyName: "Amazon",
     PostedDate: "5 days ago",
     Location: "Seattle, WA",
@@ -49,7 +55,8 @@ const vacancies = [
   },
   {
     id: 7,
-    JobTitle: "Mobile App Developer Specializing in iOS and Android Platforms",
+    JobTitle:
+      "Mobile App Developer Specializing in iOS and Android Platforms, responsible for developing, testing, and maintaining mobile applications, ensuring they meet performance and quality standards",
     CompanyName: "Spotify",
     PostedDate: "1 day ago",
     Location: "Oslo, Norway",
@@ -57,7 +64,8 @@ const vacancies = [
   },
   {
     id: 8,
-    JobTitle: "Data Scientist with Expertise in Machine Learning Algorithms",
+    JobTitle:
+      "Data Scientist with Expertise in Machine Learning Algorithms, analyzing large datasets, building predictive models, and deriving actionable insights to drive business decisions",
     CompanyName: "Netflix",
     PostedDate: "1 week ago",
     Location: "Los Gatos, CA",
@@ -65,7 +73,8 @@ const vacancies = [
   },
   {
     id: 9,
-    JobTitle: "DevOps Engineer with Experience in Continuous Deployment",
+    JobTitle:
+      "DevOps Engineer with Experience in Continuous Deployment, responsible for automating and streamlining operations and processes, ensuring reliable and efficient delivery of software",
     CompanyName: "Adobe",
     PostedDate: "3 days ago",
     Location: "San Jose, CA",
@@ -73,7 +82,8 @@ const vacancies = [
   },
   {
     id: 10,
-    JobTitle: "Security Analyst Specializing in Threat Detection and Response",
+    JobTitle:
+      "Security Analyst Specializing in Threat Detection and Response, monitoring and analyzing security incidents, developing strategies to protect against cyber threats, and ensuring compliance",
     CompanyName: "IBM",
     PostedDate: "5 days ago",
     Location: "Armonk, NY",
@@ -81,7 +91,8 @@ const vacancies = [
   },
   {
     id: 11,
-    JobTitle: "Software Engineer with Strong Problem-Solving Skills",
+    JobTitle:
+      "Software Engineer with Strong Problem-Solving Skills, designing, developing, and maintaining software applications, collaborating with team members to identify and resolve technical issues",
     CompanyName: "Intel",
     PostedDate: "2 days ago",
     Location: "Santa Clara, CA",
@@ -89,7 +100,8 @@ const vacancies = [
   },
   {
     id: 12,
-    JobTitle: "UI Designer with a Passion for Creating Intuitive Interfaces",
+    JobTitle:
+      "UI Designer with a Passion for Creating Intuitive Interfaces, crafting user-centric designs that are both aesthetically pleasing and functional, ensuring a seamless user experience",
     CompanyName: "Oracle",
     PostedDate: "4 days ago",
     Location: "Redwood City, CA",
@@ -102,63 +114,67 @@ const vacancies = [
 let jobsVacancies = document.querySelector(".jobs-vacancies");
 
 vacancies.map((vacancy) => {
-  jobsVacancies.innerHTML += `
-       <div class="vacancies-card">
+  let vacanciesList = (jobsVacancies.innerHTML += `
+       <div class="vacancies-card" onclick="vacancyId(${vacancy.id})">
          <div class="vc-header">
            <div class="vc-header-content">
              <img
                src="./images/featured-jobs/company-logo/nike.svg"
                alt="${vacancy[" "]} Logo"
              />
-             <div class="vc-company"> <h3>${vacancy["CompanyName"]}</h3>
-             <p>${vacancy["PostedDate"]}</p></div>
+             <div class="vc-company"> <h3>${vacancy.CompanyName}</h3>
+             <p>${vacancy.PostedDate}</p></div>
            </div>
-           <div class="popup-close">
-             <button class="popup-close-btn">X</button>
-           </div>
+           
          </div>
          <div class="vc-content">
-           <p>${vacancy["JobTitle"]}</p>
+           <p class="content-text">${
+             vacancy.JobTitle.substring(0, 90) + "..."
+           }</p>
          </div>
          <div class="vc-info">
-           <span>${vacancy["Location"]}</span>
-           <span>${vacancy["JobType"]}</span>
+           <span>${vacancy.Location}</span>
+           <span>${vacancy.JobType}</span>
          </div>
        </div>
-     `;
+     `);
+
+  return;
 });
 
 // Vacansies Cards End
 
-const cards = document.querySelectorAll(".vacancies-card");
-const vacanciesModal = document.querySelector("#jobs-vacancies-modal");
+// Vacansies Popup Start
 
-cards.forEach((card, index) => {
-  card.addEventListener("click", (e) => {
-    vacanciesModal.innerHTML = `<div class="vacancies-card">
+let vacancyId = (v_id) => {
+  let data = vacancies.find((e) => e.id === v_id);
+  jobsVacancies.innerHTML = `
+       <div class="vacancies-card-popup")">
          <div class="vc-header">
            <div class="vc-header-content">
              <img
                src="./images/featured-jobs/company-logo/nike.svg"
-               alt="${vacancies[index]} Logo"
+               alt="${data[" "]} Logo"
              />
-             <div class="vc-company"> <h3>${vacancies[index]}</h3>
-             <p>${vacancies[index]}</p></div>
+             <div class="vc-company"> <h3>${data.CompanyName}</h3>
+             <p>${data.PostedDate}</p></div>
            </div>
            <div class="popup-close">
-             <button class="popup-close-btn">X</button>
+             <button class="popup-close-btn" onclick="vacanciesList()">X</button>
            </div>
          </div>
          <div class="vc-content">
-           <p>${vacancies[index]}</p>
+           <p class="content-text">${data.JobTitle}</p>
          </div>
          <div class="vc-info">
-           <span>${vacancies[index]}</span>
-           <span>${vacancies[index]}</span>
+           <span>${data.Location}</span>
+           <span>${data.JobType}</span>
          </div>
-       </div>`;
-  });
-});
+       </div>
+     `;
+};
+
+// Vacansies Popup End
 
 // See All Button Start
 
