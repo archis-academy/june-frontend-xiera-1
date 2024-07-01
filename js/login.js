@@ -143,7 +143,7 @@ const loginAlert = (alertType) => {
   } else {
     Swal.fire({
       title: "Login failed",
-      text: "Please check your email and password",
+      text: "Please check your email and password...",
       icon: "error",
       showCloseButton: true,
       showConfirmButton: false,
