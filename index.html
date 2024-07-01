@@ -77,12 +77,22 @@
               </div>
             </li>
           </ul>
-          <ul class="hero-menu-accnt">
+          <ul id="hero-user-entering" class="hero-menu-accnt">
             <li class="hero-menu-accnt-item">
-              <a href="#" class="hero-log-in-btn">Log in</a>
+              <a href="/login.html" class="hero-log-in-btn">Log in</a>
             </li>
             <li class="hero-menu-accnt-item">
-              <a href="#" class="hero-create-btn">Create Account</a>
+              <a href="/register.html" class="hero-create-btn"
+                >Create Account</a
+              >
+            </li>
+          </ul>
+          <ul id="hero-user-entered" class="hero-menu-user-accnt">
+            <li class="hero-menu-accnt-item">
+              <a id="user-info" href="#" class="hero-log-in-btn"></a>
+            </li>
+            <li class="hero-menu-accnt-item">
+              <a href="#" class="hero-create-btn" onclick="logOut()">Log out</a>
             </li>
           </ul>
         </div>
@@ -106,12 +116,28 @@
         </div>
         <!-- *Mobil Menu Start -->
         <div id="hero-mobil-menu" class="hero-mobil-menu">
-          <ul class="hero-mobil-menu-accnt">
+          <ul
+            id="hero-user-mobil-entering"
+            class="hero-mobil-menu-entering-accnt"
+          >
             <li class="hero-mobil-menu-accnt-item">
-              <a href="#" class="hero-log-in-btn">Log in</a>
+              <a href="/login.html" class="hero-log-in-btn">Log in</a>
             </li>
             <li class="hero-mobil-menu-accnt-item">
-              <a href="#" class="hero-create-btn">Create Account</a>
+              <a href="/register.html" class="hero-create-btn"
+                >Create Account</a
+              >
+            </li>
+          </ul>
+          <ul
+            id="hero-user-mobil-entered"
+            class="hero-mobil-menu-entered-accnt"
+          >
+            <li class="hero-mobil-menu-accnt-item">
+              <a id="user-mobil-info" href="#" class="hero-log-in-btn"></a>
+            </li>
+            <li class="hero-mobil-menu-accnt-item">
+              <a href="#" class="hero-create-btn" onclick="logOut()">Log out</a>
             </li>
           </ul>
           <ul class="hero-mobil-menu-items">

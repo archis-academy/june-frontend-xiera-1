@@ -61,6 +61,15 @@ body {
   font-size: 17px;
 }
 
+#hero-user-entered {
+  display: none;
+}
+
+#user-info {
+  font-size: clamp(10px, 4vw, 14px);
+  margin-right: 10px;
+}
+
 .hero-log-in-btn {
   font-weight: bold;
   color: #28344a;
@@ -195,9 +204,17 @@ body {
   transition: transform 0.4s ease;
 }
 
-.hero-mobil-menu-accnt {
+.hero-mobil-menu-entering-accnt {
   margin-top: 45px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-mobil-menu-entered-accnt {
+  margin-top: 45px;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 50px;
@@ -377,6 +394,8 @@ body {
 .hero-modal-close-icon {
   width: 25px;
   height: 25px;
+  align-self: flex-end;
+  margin-right: 10px;
   cursor: pointer;
   align-self: flex-end;
   margin-right: 10px;

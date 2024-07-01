@@ -6,7 +6,7 @@ const heroWorkingModel = document.querySelector("#hero-job-type");
 const dropdowns = document.querySelectorAll(".dropdown");
 const mobilDropdowns = document.querySelectorAll(".hero-mobil-dropdown");
 
-// #Get all jops with api start
+// #Get all jobs with api start
 
 const getAllJobs = async () => {
   const response = await fetch(
@@ -17,7 +17,7 @@ const getAllJobs = async () => {
 
   return fetchedData;
 };
-// #Get all jops with api end
+// #Get all jobs with api end
 
 // #Get working models start
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // #Get working model end
 
-// =>Mobil menu visibilty switcher function start
+// =>Mobil menu visibility switcher function start
 const mobilMenuHandler = () => {
   if (mobilMenu.classList.contains("active")) {
     mobilMenu.classList.remove("active");
@@ -217,3 +217,44 @@ window.addEventListener("click", (e) => {
 });
 
 // => Dropdown mobil menu functions end
+
+// => User functions start
+
+// * General screen
+const enteringUser = document.querySelector("#hero-user-entering");
+const enteredUser = document.querySelector("#hero-user-entered");
+const userInfo = document.querySelector("#user-info");
+// *Mobil screen
+const enteringUserMobil = document.querySelector("#hero-user-mobil-entering");
+const enteredUserMobil = document.querySelector("#hero-user-mobil-entered");
+const userInfoMobil = document.querySelector("#user-mobil-info");
+
+// *Get single user
+const getEnteredUserToLocalStorage = () => {
+  const enteredUser = JSON.parse(localStorage.getItem("user")) || null;
+
+  return enteredUser;
+};
+
+// *When load the page checking the user
+
+window.onload = function () {
+  const user = getEnteredUserToLocalStorage();
+
+  user !== null && user.isAuth ? (enteringUser.style.display = "none") : "";
+  user !== null && user.isAuth ? (enteredUser.style.display = "flex") : "";
+  user !== null && user.isAuth
+    ? (enteringUserMobil.style.display = "none")
+    : "";
+  user !== null && user.isAuth ? (enteredUserMobil.style.display = "flex") : "";
+
+  userInfo.textContent = `${user.email}`;
+  userInfoMobil.textContent = `${user.email}`;
+};
+
+const logOut = () => {
+  localStorage.removeItem("user");
+  window.location.reload();
+};
+
+// => User functions end
