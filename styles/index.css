@@ -460,8 +460,9 @@ body {
 }
 
 .os-text {
+  padding: 0 5px;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(30px, 5vw, 50px);
+  font-size: clamp(30px, 8vw, 50px);
   font-weight: 700;
   letter-spacing: -1px;
   color: #292929;
@@ -474,6 +475,9 @@ body {
   max-width: 1085px;
   height: 586px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
 }
 
