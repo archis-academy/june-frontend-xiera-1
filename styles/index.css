@@ -172,6 +172,7 @@ body {
   padding: 30px;
   font-family: "Inter-Semibold", sans-serif;
   cursor: pointer;
+  display: none;
 }
 
 .vacancies-card-popup {
@@ -190,7 +191,7 @@ body {
 .jobs-vacancies .vacancies-card:nth-child(4),
 .jobs-vacancies .vacancies-card:nth-child(5),
 .jobs-vacancies .vacancies-card:nth-child(6) {
-  display: inline-block;
+  display: block;
 }
 
 .jobs-vacancies .vacancies-card:hover {

@@ -1,3 +1,26 @@
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+var swiper = new Swiper(".mySwiper", {
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 3,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 const vacancies = [
   {
     id: 1,
@@ -113,19 +136,24 @@ const vacancies = [
 
 let jobsVacancies = document.querySelector(".jobs-vacancies");
 
-vacancies.map((vacancy) => {
-  let vacanciesList = (jobsVacancies.innerHTML += `
-       <div class="vacancies-card" onclick="vacancyId(${vacancy.id})">
+function vacanciesList() {
+  jobsVacancies.innerHTML = vacancies
+    .map(
+      (vacancy) => `
+       <div class="vacancies-card swiper-slide" onclick="vacancyId(${
+         vacancy.id
+       })">
          <div class="vc-header">
            <div class="vc-header-content">
              <img
                src="./images/featured-jobs/company-logo/nike.svg"
-               alt="${vacancy[" "]} Logo"
+               alt="${vacancy.CompanyName} Logo"
              />
-             <div class="vc-company"> <h3>${vacancy.CompanyName}</h3>
-             <p>${vacancy.PostedDate}</p></div>
+             <div class="vc-company">
+               <h3>${vacancy.CompanyName}</h3>
+               <p>${vacancy.PostedDate}</p>
+             </div>
            </div>
-           
          </div>
          <div class="vc-content">
            <p class="content-text">${
@@ -137,12 +165,12 @@ vacancies.map((vacancy) => {
            <span>${vacancy.JobType}</span>
          </div>
        </div>
-     `);
-
-  return;
-});
-
+     `
+    )
+    .join("");
+}
 // Vacansies Cards End
+vacanciesList();
 
 // Vacansies Popup Start
 
@@ -182,11 +210,16 @@ let seeAllBtn = document.querySelector("#jobs-see-all-btn");
 let currentVacancy = 6;
 
 seeAllBtn.onclick = () => {
-  let nextVacancies = [
-    ...document.querySelectorAll(".jobs-vacancies .vacancies-card"),
-  ];
-  for (var i = currentVacancy; i < currentVacancy + 6; i++) {
-    nextVacancies[i].style.display = "inline-block";
+  let nextVacancies = document.querySelectorAll(
+    ".jobs-vacancies .vacancies-card"
+  );
+
+  for (
+    let i = currentVacancy;
+    i < currentVacancy + 6 && i < nextVacancies.length;
+    i++
+  ) {
+    nextVacancies[i].style.display = "block";
   }
   currentVacancy += 6;
 
@@ -194,5 +227,3 @@ seeAllBtn.onclick = () => {
     seeAllBtn.style.display = "none";
   }
 };
-
-// See All Button End

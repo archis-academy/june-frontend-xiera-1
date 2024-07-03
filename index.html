@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xiera</title>
     <link rel="stylesheet" href="/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- Featured Jobs Start -->
@@ -15,20 +19,20 @@
         <h2>Featured Jobs</h2>
         <span>Employee and Employment Company.</span>
         <div class="jobs-navigation-buttons">
-          <button id="left-arrow">
+          <button id="left-arrow" class="swiper-button-prev">
             <img src="./images/featured-jobs/left-arrow.svg" />
           </button>
-          <button id="right-arrow">
+          <button id="right-arrow" class="swiper-button-next">
             <img src="./images/featured-jobs/right-arrow.svg" />
           </button>
         </div>
       </div>
 
-      <div class="jobs-vacancies" id="jobs-vacancies-modal">
-        
+      <div class="swiper mySwiper">
+        <div class="jobs-vacancies swiper-wrapper"></div>
       </div>
 
-      <div class="jobs-see-all">
+      <div class="jobs-see-all" id="jobs-see-all-btn">
         <button id="jobs-see-all-btn">
           See all &nbsp;&nbsp;&nbsp;&nbsp;<img
             src="./images/featured-jobs/right-arrow.svg"
@@ -38,6 +42,7 @@
     </div>
 
     <!-- Featured Jobs End -->
-    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js" type="module"></script>
   </body>
 </html>
