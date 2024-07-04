@@ -73,11 +73,15 @@ margin-top: 20px;
 font-size: 14px;
 margin: auto;
 max-width: 1200px;
+margin-top: 65px;
 }
 .follow-text {
-margin-top: 65px;
+/*margin-top: 65px;*/
 font-size: 16px;
 color: #727278;
+}
+.social-media{
+    margin-top: 65px;
 }
 .Creator {
   text-align: right;
