@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xiera</title>
-    <link rel="stylesheet" href="/styles/index.css" />
-  </head>
-  <body>
-    <script src="app.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xiera</title>
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/shared.css">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <div class="main">
+
+    <!--left side-->
+
+    <div class="container">
+
+      <!--Happy User-->
+      <div class="circle"></div>
+      <div class="happy_user">
+        
+        <button class="like" onclick="increment()">👍 </button>
+        <p class="happy_show"><strong id="counter-el">398</strong> Happy users</p>
+      </div>
+
+      <!-- Swiper -->
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="card">
+              <h2 class="beginer">BEGINNER</h2>
+              <p>Yearly Package</p>
+              <div class="price">
+                <span class="dollar">$</span>77<sup>.99</sup>
+              </div>
+
+              <ul class="features">
+                <li>Anonymous User</li>
+                <li>Bot Detection</li>
+                <li>Registration</li>
+                <li>Directory</li>
+              </ul>
+              <button class="cta-button-blue">Get Started Now</button>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="card">
+              <h2 class="beginer">BASIC</h2>
+              <p>Yearly Package</p>
+              <div class="price">
+                <span class="dollar">$</span>87<sup>.99</sup>
+              </div>
+
+              <ul class="features">
+                <li>Anonymous User</li>
+                <li>Bot Detection</li>
+                <li>Registration</li>
+                <li>Directory</li>
+              </ul>
+              <button class="cta-button-purple">Get Started Now</button>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="card">
+              <h2 class="beginer">PREMIUM</h2>
+              <p>Yearly Package</p>
+              <div class="price">
+                <span class="dollar">$</span>97.99</sup>
+              </div>
+              <ul class="features">
+                <li>Online Class</li>
+                <li>Professional User</li>
+                <li>Registration</li>
+                <li>Directory</li>
+              </ul>
+              <button class="cta-button-org">Get Started Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--right side-->
+
+    <div class="pricing_info">
+      <h4 class="pricing_valu">PRICE VALU</h4>
+      <h2 class="our_pricing">Our Pricing</h2>
+      <p>The link between the Employee and Employment Company.</p>
+      <div class="pricing-toggle">
+        <span class="montly">Monthly</span>
+        <div class="cizgi"></div>
+        <span class="yearly">Yearly</span>
+      </div>
+    </div>
+  </div>
+
+  <!--JS-->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
 </html>
