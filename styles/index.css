@@ -448,7 +448,6 @@ body {
   align-items: center;
   gap: 10px;
   margin-top: 150px;
-  cursor: pointer;
 }
 
 .os-title {
@@ -468,12 +467,12 @@ body {
   color: #292929;
   max-width: 540px;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 }
 
 .os-card-container {
   max-width: 1085px;
-  height: 586px;
+  height: 486px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -492,6 +491,7 @@ body {
   border-radius: 16px;
   background-color: transparent;
   box-shadow: -10px 12px 40px #00000018;
+  cursor: pointer;
 }
 
 .os-card:hover {
