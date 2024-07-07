@@ -1,26 +1,3 @@
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-
-var swiper = new Swiper(".mySwiper", {
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 2,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 3,
-    },
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
 const vacancies = [
   {
     id: 1,
@@ -132,17 +109,20 @@ const vacancies = [
   },
 ];
 
-// Vacansies Cards Start
+const jobsVacancies = document.querySelector(".jobs-vacancies");
+const vacanciesPerPage = 6;
+let currentPage = 0;
+const totalPages = Math.ceil(vacancies.length / vacanciesPerPage);
 
-let jobsVacancies = document.querySelector(".jobs-vacancies");
+function showVacancies(page) {
+  const start = page * vacanciesPerPage;
+  const end = start + vacanciesPerPage;
+  const vacanciesToShow = vacancies.slice(start, end);
 
-function vacanciesList() {
-  jobsVacancies.innerHTML = vacancies
+  jobsVacancies.innerHTML = vacanciesToShow
     .map(
       (vacancy) => `
-       <div class="vacancies-card swiper-slide" onclick="vacancyId(${
-         vacancy.id
-       })">
+       <div class="vacancies-card" onclick="vacancyId(${vacancy.id})">
          <div class="vc-header">
            <div class="vc-header-content">
              <img
@@ -168,27 +148,71 @@ function vacanciesList() {
      `
     )
     .join("");
+
+  document.querySelectorAll(".vacancies-card").forEach((card) => {
+    card.style.display = "block";
+  });
+
+  document.getElementById("left-arrow").disabled = currentPage === 0;
+  document.getElementById("right-arrow").disabled =
+    currentPage === totalPages - 1;
 }
-// Vacansies Cards End
-vacanciesList();
 
-// Vacansies Popup Start
-
-let vacancyId = (v_id) => {
-  let data = vacancies.find((e) => e.id === v_id);
-  jobsVacancies.innerHTML = `
-       <div class="vacancies-card-popup")">
+function showAllVacancies() {
+  jobsVacancies.innerHTML = vacancies
+    .map(
+      (vacancy) => `
+       <div class="vacancies-card" onclick="vacancyId(${vacancy.id})">
          <div class="vc-header">
            <div class="vc-header-content">
              <img
                src="./images/featured-jobs/company-logo/nike.svg"
-               alt="${data[" "]} Logo"
+               alt="${vacancy.CompanyName} Logo"
+             />
+             <div class="vc-company">
+               <h3>${vacancy.CompanyName}</h3>
+               <p>${vacancy.PostedDate}</p>
+             </div>
+           </div>
+         </div>
+         <div class="vc-content">
+           <p class="content-text">${
+             vacancy.JobTitle.substring(0, 90) + "..."
+           }</p>
+         </div>
+         <div class="vc-info">
+           <span>${vacancy.Location}</span>
+           <span>${vacancy.JobType}</span>
+         </div>
+       </div>
+     `
+    )
+    .join("");
+
+  document.querySelectorAll(".vacancies-card").forEach((card) => {
+    card.style.display = "block";
+  });
+
+  document.getElementById("left-arrow").disabled = true;
+  document.getElementById("right-arrow").disabled = true;
+}
+
+function vacancyId(v_id) {
+  let data = vacancies.find((e) => e.id === v_id);
+
+  jobsVacancies.innerHTML = `
+       <div class="vacancies-card-popup">
+         <div class="vc-header">
+           <div class="vc-header-content">
+             <img
+               src="./images/featured-jobs/company-logo/nike.svg"
+               alt="${data.CompanyName} Logo"
              />
              <div class="vc-company"> <h3>${data.CompanyName}</h3>
              <p>${data.PostedDate}</p></div>
            </div>
            <div class="popup-close">
-             <button class="popup-close-btn" onclick="vacanciesList()">X</button>
+             <button class="popup-close-btn" onclick="showVacancies(currentPage)">X</button>
            </div>
          </div>
          <div class="vc-content">
@@ -200,30 +224,25 @@ let vacancyId = (v_id) => {
          </div>
        </div>
      `;
-};
+}
 
-// Vacansies Popup End
-
-// See All Button Start
-
-let seeAllBtn = document.querySelector("#jobs-see-all-btn");
-let currentVacancy = 6;
-
-seeAllBtn.onclick = () => {
-  let nextVacancies = document.querySelectorAll(
-    ".jobs-vacancies .vacancies-card"
-  );
-
-  for (
-    let i = currentVacancy;
-    i < currentVacancy + 6 && i < nextVacancies.length;
-    i++
-  ) {
-    nextVacancies[i].style.display = "block";
+document.getElementById("right-arrow").addEventListener("click", () => {
+  if (currentPage < totalPages - 1) {
+    currentPage++;
+    showVacancies(currentPage);
   }
-  currentVacancy += 6;
+});
 
-  if (currentVacancy >= nextVacancies.length) {
-    seeAllBtn.style.display = "none";
+document.getElementById("left-arrow").addEventListener("click", () => {
+  if (currentPage > 0) {
+    currentPage--;
+    showVacancies(currentPage);
   }
-};
+});
+
+document.getElementById("jobs-see-all-btn").addEventListener("click", () => {
+  showAllVacancies();
+  document.getElementById("jobs-see-all-btn").style.display = "none";
+});
+
+showVacancies(currentPage);
