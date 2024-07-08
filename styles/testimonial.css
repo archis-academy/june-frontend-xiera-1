@@ -2,17 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.testimonial.fade-out {
+
+
+ .testimonial 
+ .fade-out {
   opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+.testimonial p {
+  font-size: clamp(10px, 4vw, 16px);
 }
 .testimonial {
   max-width: 1050px;
   height: 597px;
   margin: 0 auto;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  /* font-size: clamp(10px, 4vw, 16px); */
 }
 .testimonial-header {
   display: flex;
@@ -38,32 +41,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
 }
-.testimonial-content-customer-img {
-  display: grid;
-  place-items: center;
-  width: 412px;
-  height: 420px;
-  position: relative;
+.arrow-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.testimonial-content .testimonial-content-customer-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  max-height: 400px;
   left: 70px;
+}
+.testimonial-content-customer-img-customer {
+  display: flex;
+  width: 100%;
 }
 .testimonial-content-customer-img .testimonial-content-customer-img-customer {
   width: 346px;
   height: 388px;
   border-radius: 50%;
-  /* box-shadow: -30px 30px 20px 1px #d1cccc; */
   box-shadow: -30px 30px 20px 1px #e7e5e5;
 }
-.testimonial-content-customer-img-vector {
-  /* width: 175px; */
-  width: 200px;
-  height: 132px;
-  position: absolute;
-  z-index: -1;
-  left: -37px;
-  top: 10px;
-  /* -webkit-transform: rotate(-12deg); */
-}
+
 .testimonial-content-customer-info {
   width: 477px;
   height: 418px;
@@ -109,17 +112,18 @@
   display: flex;
   justify-content: space-between;
 }
-.testimonial-content-customer-info-arrow i{
-  
+.testimonial-content-customer-info-arrow i {
   cursor: pointer;
 }
-/* .fa-arrow-left {
-  color: #afafaf;
-} */
 
-
-@media  only screen and (max-width: 968px{
-  .testimonial{
-    
+@media (max-width: 768px) {
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
+  .testimonial-header .testimonial-header-customer-title {
+    font-size: 30px;
+  }
+
+} 

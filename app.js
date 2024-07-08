@@ -81,7 +81,6 @@ function renderCustomer(index) {
             </div>
             <div class="testimonial-content">
                 <div class="testimonial-content-customer-img">
-                    <img class="testimonial-content-customer-img-vector" src="assets/testimonial-image/Vector-6322.jpg" alt="" />
                     <img class="testimonial-content-customer-img-customer" src="${customer.imageUrl}" alt="${customer.name}" />
                 </div>
                 <div class="testimonial-content-customer-info">
@@ -108,8 +107,12 @@ function renderCustomer(index) {
     `;
 }
 
+
+
+
 function updateCarousel() {
-    const testimonialElement = root.querySelector('.testimonial');
+    const testimonialElement = root.querySelector('.testimonial-content'); 
+   
     if (testimonialElement) {
         testimonialElement.classList.add('fade-out');
         testimonialElement.addEventListener('transitionend', () => {
@@ -141,15 +144,15 @@ function renderNewCustomer() {
     });
 
     if (currentIndex === 0) {
-        prevButton.style.visibility = 'hidden';
+        prevButton.classList.add('arrow-disabled');
     } else {
-        prevButton.style.visibility = 'visible';
+        prevButton.classList.remove('arrow-disabled');
     }
-
+    
     if (currentIndex === customers.length - 1) {
-        nextButton.style.visibility = 'hidden';
+        nextButton.classList.add('arrow-disabled');
     } else {
-        nextButton.style.visibility = 'visible';
+        nextButton.classList.remove('arrow-disabled');
     }
 }
 
