@@ -17,6 +17,7 @@ body {
     background-size: cover;
     width: 300px;
     height: 300px;
+    
   }
   
   .swiper-slide p {
@@ -102,6 +103,7 @@ body {
     align-items: center;
     text-align: center;
     margin-top: 40px;
+    
   }
   .features {
     list-style-type: none;
@@ -218,3 +220,4 @@ body {
     border: 1px solid #bcbcbc;
     height: 26px;
   }
+ 

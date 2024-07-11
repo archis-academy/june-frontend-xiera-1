@@ -133,6 +133,8 @@ function changeSwiperContent(packageType) {
             </div>
         `;
     }
+    
 
     swiper.update(); // Swiper'ı güncelle
 }
+
