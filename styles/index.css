@@ -4,6 +4,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Hero Section Css Start */
+
 .hero-container {
   max-width: 1252px;
   margin: 50px auto;
@@ -442,7 +444,9 @@ body {
 .hero-modal-table-body > tr:hover {
   background-color: #03badfb4;
 }
-
+/* Hero Section Css End *
+/
+/* Onboarding Section Css Start */
 .os-container {
   display: flex;
   flex-direction: column;
@@ -473,7 +477,7 @@ body {
 
 .os-card-container {
   max-width: 1085px;
-  height: 486px;
+  min-height: 486px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -525,7 +529,79 @@ body {
   color: #6f6f75;
   text-align: center;
 }
+/* Onboarding Section Css End */
 
+/* Newsletter Section Css Start */
+.nc-container {
+  margin: 50px auto;
+  max-width: 1170px;
+  height: 380px;
+  background-image: url("/images/newsletter-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.nc-title {
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #bc95f2;
+}
+
+.nc-text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nc-input-group {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc-input {
+  width: 500px;
+  height: 78px;
+  border-radius: 38px;
+  background-color: #fff;
+  padding: 0 55px;
+  border: none;
+  outline: none;
+}
+
+.nc-button {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  background-color: #ffb200;
+  border-radius: 50px;
+  width: 139px;
+  height: 70px;
+  border: none;
+  cursor: pointer;
+}
+/* Newsletter Section Css End */
+
+/* Footer Section Css Start */
 .footer {
   padding: 20px 0;
 }
@@ -612,7 +688,9 @@ body {
 .DesignedBy {
   text-align: left;
 }
+/* Footer Section Css End */
 
+/* Media Query Start */
 @media screen and (max-width: 1440px) {
   .hero-hamburger-menu {
     display: none;
@@ -662,5 +740,4 @@ body {
     justify-content: center;
   }
 }
-
-/* Hero Section CSS End */
+/* Media Query End */
