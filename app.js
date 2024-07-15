@@ -1,13 +1,15 @@
-var swiper = new Swiper(".mySwiper", {
+/*   SWIPER JS    */
+
+const swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 50,
-    stretch: 50,
+    stretch: 0,
     depth: 100,
-    modifier: 0.5,
+    modifier: 1,
     slideShadows: true,
 
   },
@@ -18,53 +20,71 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+/*     HAPPY USER BUTTON   */
+
+const incrementButton = document.getElementById("counter-el");
+let ilksayi = 0;
+
+function increment() {
+  ilksayi += 1;
+  console.log("sayı arttırılıyor");
+  incrementButton.innerHTML = 398 + ilksayi;
+}
+
+/*   MONTHLY-YEARLY CHANGES PACKAGES   */
+
 const packagesProduct =
 {
-  yearly: [{
-    id: 1,
-    title: "Premium",
-    packageType: "Yearly Package",
-    price: "$97.99"
-  },
-  {
-    id: 2,
-    title: "Basic",
-    packageType: "Yearly Package",
-    price: "$37.99"
-  },
-  {
-    id: 3,
-    title: "Beginner",
-    packageType: "Yearly Package",
-    price: "$57.99"
-  }]
-  ,
   monthly: [
     {
       id: 1,
-      title: "basic",
+      title: "BEGINNER",
       packageType: "Monthly Package",
-      price: "17.99"
+      price: "17"
     }, {
       id: 2,
-      title: "beginner",
+      title: "BASIC",
       packageType: "Monthly Package",
-      price: "25.99"
+      price: "27"
+    },
+    {
+      id: 3,
+      title: "PREMIUM",
+      packageType: "Monthly Package",
+      price: "37"
     }
-  ]
+  ],
+  yearly: [{
+    id: 1,
+    title: "BEGINNER",
+    packageType: "Yearly Package",
+    price: "57"
+  },
+  {
+    id: 2,
+    title: "BASIC",
+    packageType: "Yearly Package",
+    price: "67"
+  },
+  {
+    id: 3,
+    title: "PREMIUM",
+    packageType: "Yearly Package",
+    price: "77"
+  }]
 }
 
 const swiperWrapper = document.querySelector("#swiper-items")
 
 const changeSwiperContent = (type) => {
-console.log("çalıştı");
-if(type==="monthly"){
-  swiperWrapper.innerHTML = packagesProduct.monthly.map((item) => { 
-    `<div class="swiper-slide">
+  swiperWrapper.innerHTML = '';
+  if (type === "monthly") {
+    swiperWrapper.innerHTML = packagesProduct.monthly.map((item) => {
+      return `<div class="swiper-slide">
      <div class="card">
        <h2 class="beginer">${item.title}</h2>
        <p>${item.packageType} </p>
-       <span class="dollar">$<sup>${item.price}</sup></span>
+       <span class="dollar">$${item.price}<sup>.99</sup></span>
        <ul class="features">
          <li>Anonymous User</li>
          <li>Bot Detection</li>
@@ -73,16 +93,16 @@ if(type==="monthly"){
        </ul>
        <button class="cta-button-blue">Get Started Now</button>
      </div>
-   </div>` 
-   }).join("")
-}
-else{
-  swiperWrapper.innerHTML = packagesProduct.yearly.map((item) => { 
-    `<div class="swiper-slide">
+   </div>`
+    }).join("")
+  }
+  else {
+    swiperWrapper.innerHTML = packagesProduct.yearly.map((item) => {
+      return `<div class="swiper-slide">
      <div class="card">
        <h2 class="beginer">${item.title}</h2>
        <p>${item.packageType} </p>
-       <span class="dollar">$<sup>${item.price}</sup></span>
+       <span class="dollar">$${item.price}<sup>.99</sup></span>
        <ul class="features">
          <li>Anonymous User</li>
          <li>Bot Detection</li>
@@ -91,13 +111,11 @@ else{
        </ul>
        <button class="cta-button-blue">Get Started Now</button>
      </div>
-   </div>` 
-   }).join("")
+   </div>`
+    }).join("")
 
+  }
+  swiper.update();
 }
-
- 
-
-}
-
+changeSwiperContent();
 
