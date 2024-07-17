@@ -334,37 +334,49 @@ function showAllVacancies() {
     .join("");
 }
 
-document.getElementById("show-all-vacansy").addEventListener("click", () => {
-  showAllVacancies();
-  document.getElementById("show-all-vacansy").style.display = "none";
+let isFirstClick = true;
+
+let showAllVacanciesButton = document.getElementById("show-all-vacansy");
+
+showAllVacanciesButton.addEventListener("click", () => {
+  if (isFirstClick) {
+    showAllVacancies();
+    showAllVacanciesButton.innerHTML = `<i class="fa-solid fa-arrow-left"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Show Less`;
+    isFirstClick = false;
+  } else {
+    showMainVacancies(startPage, endPage);
+    isFirstClick = true;
+    showAllVacanciesButton.innerHTML = `See all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fa-solid fa-arrow-right"></i>`;
+  }
 });
 
 function vacancyId(id) {
   let job = jobListings.find((job) => job.id === id);
-  vacansyBoxContainer.innerHTML = `<div class="vacansy-card" onclick="showMainVacancies(startPage, endPage);">
-                <div class="vacansy-header-content">
-                <div class="vacansy-logo">
-                    <img
-                    src=${job.logo}
-                    alt=""
-                    />
-                </div>
-                <div class="vacansy-header">
-                    <h3>${job.CompanyName}</h3>
-                    <h4>${job.PostedDate}</h4>
-                </div>
-                </div>
-                <div class="vacansy-text">
-                <p>${job.Description}</p>
-                </div>
-                <div class="vacansy-info">
-                <p>
-                    <i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;${job.Location}
-                </p>
-                <p>${job.JobType}</p>
-                </div>
-            </div>`;
-
-  let vacancyCard = document.querySelector(".vacansy-card");
-  vacancyCard.classList.toggle("job_popup");
+  vacansyBoxContainer.innerHTML = `
+<div
+  class="vacansy-card job_popup"
+  onclick="showMainVacancies(startPage, endPage);"
+>
+  <div class="vacansy-header-content">
+    <div class="vacansy-logo">
+      <img src="${job.logo}" alt="" />
+    </div>
+    <div class="vacansy-header">
+      <h3>${job.CompanyName}</h3>
+      <h4>${job.PostedDate}</h4>
+    </div>
+    <div class="close-button">
+      <button><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+  <div class="vacansy-text">
+    <p>${job.Description}</p>
+  </div>
+  <div class="vacansy-info">
+    <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;${job.Location}</p>
+    <p>${job.JobType}</p>
+  </div>
+</div>`;
 }
