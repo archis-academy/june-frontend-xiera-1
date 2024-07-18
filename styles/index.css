@@ -575,3 +575,232 @@ body {
 }
 
 /* Hero Section CSS End */
+
+/* Featured Jobs Section Start Parviz*/
+
+.featured-jobs-container {
+  background-color: #efeef3;
+  padding: 20px;
+}
+
+.featured-jobs {
+  max-width: 1085px;
+  margin: 0 auto;
+}
+
+.featured-jobs-header-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.featured-jobs-header-container .featured-jobs-header h2 {
+  color: #864bd8;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.featured-jobs-header-container .featured-jobs-header h1 {
+  color: #292929;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  letter-spacing: -1px;
+}
+
+.featured-jobs-header-container .featured-jobs-header h3 {
+  color: #5b5a62;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.4px;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons button:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons .arrow-left {
+  background-color: #ffffff;
+}
+.featured-jobs-header-container .jobs-swiper-buttons .arrow-right {
+  background-color: #f57343;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons .arrow-right i {
+  color: #ffffff;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons button i {
+  font-size: 20px;
+}
+
+.vacansy-box-container {
+  margin: 80px 0 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+}
+
+.vacansy-card {
+  max-width: 330px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.close-button i {
+  font-size: 30px;
+}
+
+.vacansy-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.vacansy-card .vacansy-header-content {
+  display: flex;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 16px;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-header h3 {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-header h4 {
+  color: #b5b8c6;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.vacansy-card .vacansy-text {
+  margin-top: 34px;
+  margin-bottom: 45px;
+}
+
+.vacansy-card .vacansy-text p {
+  font-size: 24px;
+  letter-spacing: -0.52px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.vacansy-card .vacansy-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vacansy-card .vacansy-info p {
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.vacansy-info > p:first-child {
+  color: #f36532;
+  background-color: #f8ece8;
+  margin-right: 10px;
+}
+
+.vacansy-info > p:nth-child(2) {
+  color: #838383;
+  background-color: #f8f7fe;
+}
+
+.vacansy-see-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vacansy-see-all .see-all-vacansy {
+  background-color: #864bd8;
+  color: #fff9f8;
+  padding: 20px 30px;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vacansy-see-all .see-all-vacansy:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.job_popup {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-jobs-header-container .jobs-swiper-buttons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .vacansy-box-container {
+    margin-top: 20px;
+  }
+}
+
+/* Featured Jobs Section End Parviz*/
