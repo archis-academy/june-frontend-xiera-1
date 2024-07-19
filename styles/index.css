@@ -563,39 +563,38 @@ body {
   text-align: center;
   color: #fff;
   font-family: "Montserrat", sans-serif;
-  font-size: 50px;
+  font-size: clamp(40px, 8vw, 50px);
   line-height: 60px;
   font-weight: 700;
   text-align: center;
 }
 
 .nc-input-group {
-  width: 100%;
-  max-width: 500px;
-  position: relative;
+  max-width: 750px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 35px;
+  padding: 3px;
+  margin: 0 15px;
 }
 
 .nc-input {
-  width: 500px;
-  height: 78px;
-  border-radius: 38px;
-  background-color: #fff;
-  padding: 0 55px;
+  min-height: 60px;
+  background-color: transparent;
+  flex: 2;
+  padding: 0 45px;
   border: none;
   outline: none;
 }
 
 .nc-button {
-  position: absolute;
-  top: 4px;
-  right: 5px;
+  flex: 1;
   background-color: #ffb200;
   border-radius: 50px;
-  width: 139px;
-  height: 70px;
+  padding: 24px 30px;
   border: none;
   cursor: pointer;
 }
