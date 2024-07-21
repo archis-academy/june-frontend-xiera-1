@@ -804,3 +804,124 @@ body {
 }
 
 /* Featured Jobs Section End Parviz*/
+
+/* Jobs Section CSS Start */
+.swiper {
+  padding: 30px 15px !important;
+  width: 80%;
+  height: 100%;
+}
+
+.swiper-wrapper {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swiper-slide {
+  padding: 20px;
+  max-width: 190px !important;
+  min-height: 170px !important;
+  border: 1px solid rgba(177, 177, 177, 0.44);
+  border-radius: 15px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.js-slide-img {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 10px;
+}
+
+.js-slide-title {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(9px, 5vw, 18px);
+  font-weight: 600;
+  color: #292929;
+  margin-bottom: 10px;
+}
+
+.js-slide-text {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(6px, 5vw, 13px);
+  font-weight: 500;
+  color: #919098;
+  text-align: center;
+}
+
+.js-swiper-pagination {
+  max-width: 210px !important;
+  height: 5px;
+  margin: 0 auto;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  border-radius: 20px;
+  background-color: #864bd858;
+  overflow: hidden;
+}
+
+.js-swiper-pagination-bullet {
+  width: 70px !important;
+  height: 5px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background-color: #864bd8 !important;
+  opacity: 0.1;
+  cursor: pointer;
+}
+
+.js-swiper-pagination-bullet-active {
+  background-color: #864bd8 !important;
+  opacity: 1 !important;
+}
+
+.js-container {
+  max-width: 1120px;
+  min-height: 570px;
+  margin: 0 auto;
+  padding: 130px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.js-subtitle {
+  color: #f57343;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.js-title {
+  color: #292929;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 8vw, 50px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.js-text {
+  max-width: 470px;
+  text-align: center;
+  color: #5b5a62;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(12px, 8vw, 18px);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .swiper {
+    max-width: 50%;
+  }
+}
+
+/* Jobs Section CSS End */

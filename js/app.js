@@ -259,7 +259,6 @@ const logOut = () => {
 
 // => User functions end
 
-
 const jobListings = [
   {
     logo: "https://via.placeholder.com/150x150/0077b6/ffffff?text=Gucci",
@@ -642,3 +641,148 @@ function vacancyId(id) {
   </div>
 </div>`;
 }
+
+// Jobs Section JS Start
+
+const jobsCategories = [
+  {
+    id: 1,
+    img: "/images/design-category.png",
+    title: "Design",
+    jobAmount: "310 vacancy",
+  },
+  {
+    id: 2,
+    img: "/images/business-category.png",
+    title: "Business",
+    jobAmount: "105 vacancy",
+  },
+  {
+    id: 3,
+    img: "/images/development-category.png",
+    title: "Development",
+    jobAmount: "312 vacancy",
+  },
+  {
+    id: 4,
+    img: "/images/communication-category.png",
+    title: "Communication",
+    jobAmount: "319 vacancy",
+  },
+  {
+    id: 5,
+    img: "/images/design-category.png",
+    title: "Design",
+    jobAmount: "310 vacancy",
+  },
+  {
+    id: 6,
+    img: "/images/business-category.png",
+    title: "Business",
+    jobAmount: "105 vacancy",
+  },
+  {
+    id: 7,
+    img: "/images/development-category.png",
+    title: "Development",
+    jobAmount: "312 vacancy",
+  },
+  {
+    id: 8,
+    img: "/images/communication-category.png",
+    title: "Communication",
+    jobAmount: "319 vacancy",
+  },
+  {
+    id: 9,
+    img: "/images/design-category.png",
+    title: "Design",
+    jobAmount: "310 vacancy",
+  },
+  {
+    id: 10,
+    img: "/images/business-category.png",
+    title: "Business",
+    jobAmount: "105 vacancy",
+  },
+  {
+    id: 11,
+    img: "/images/development-category.png",
+    title: "Development",
+    jobAmount: "312 vacancy",
+  },
+  {
+    id: 12,
+    img: "/images/communication-category.png",
+    title: "Communication",
+    jobAmount: "319 vacancy",
+  },
+];
+
+const jsSwiperWrapper = document.querySelector("#jsSwiperWrapper");
+
+jsSwiperWrapper.innerHTML = jobsCategories
+  .map((jobCategory) => {
+    return `<div class="swiper-slide">
+    <img
+    src="${jobCategory.img}"
+    alt="${jobCategory.title}"
+    class="js-slide-img"
+    />
+    <h3 class="js-slide-title">${jobCategory.title}</h3>
+    <p class="js-slide-text">${jobCategory.jobAmount}</p>
+  </div>`;
+  })
+  .join("");
+
+// => Swiper Start
+
+const swiper = new Swiper("#js-swiper", {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 50,
+  mousewheel: true,
+  pagination: {
+    el: ".js-swiper-pagination",
+    clickable: true,
+    bulletClass: "js-swiper-pagination-bullet",
+    bulletActiveClass: "js-swiper-pagination-bullet-active",
+    renderBullet: (index, className) => {
+      return `<div class="${className}"></div>`;
+    },
+  },
+  on: {
+    slideChange: () => {
+      const bullets = document.querySelectorAll(".js-swiper-pagination-bullet");
+      bullets.forEach((bullet, index) => {
+        index < total
+          ? bullet.classList.remove("js-swiper-pagination-bullet-active")
+          : "";
+        index === Math.floor(swiper.activeIndex)
+          ? bullet.classList.add("js-swiper-pagination-bullet-active")
+          : "";
+      });
+    },
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+    },
+    640: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 50,
+    },
+  },
+});
+
+// => Swiper End
+
+// Jobs Section JS End
