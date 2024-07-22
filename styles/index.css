@@ -535,7 +535,7 @@ body {
 .nc-container {
   margin: 50px auto;
   max-width: 1170px;
-  height: 380px;
+  padding: 90px 15px;
   background-image: url("/images/newsletter-bg.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -738,6 +738,16 @@ body {
   .hero-trending-search-list {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nc-container {
+    margin: 50px 5px;
+  }
+
+  .nc-input {
+    padding: 0 25px;
   }
 }
 /* Media Query End */
