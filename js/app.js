@@ -740,7 +740,7 @@ jsSwiperWrapper.innerHTML = jobsCategories
 const swiper = new Swiper("#js-swiper", {
   slidesPerView: 1,
   slidesPerGroup: 1,
-  spaceBetween: 50,
+  spaceBetween: 240,
   mousewheel: true,
   pagination: {
     el: ".js-swiper-pagination",
