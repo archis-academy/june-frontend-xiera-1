@@ -1,7 +1,10 @@
 /* Hero Section CSS Start */
 body {
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
+
+/* Hero Section Css Start */
 
 .hero-container {
   max-width: 1252px;
@@ -441,7 +444,9 @@ body {
 .hero-modal-table-body > tr:hover {
   background-color: #03badfb4;
 }
-
+/* Hero Section Css End *
+/
+/* Onboarding Section Css Start */
 .os-container {
   display: flex;
   flex-direction: column;
@@ -472,6 +477,7 @@ body {
 
 .os-card-container {
   max-width: 1085px;
+  min-height: 486px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -523,7 +529,168 @@ body {
   color: #6f6f75;
   text-align: center;
 }
+/* Onboarding Section Css End */
 
+/* Newsletter Section Css Start */
+.nc-container {
+  margin: 50px auto;
+  max-width: 1170px;
+  padding: 90px 15px;
+  background-image: url("/images/newsletter-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.nc-title {
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #bc95f2;
+}
+
+.nc-text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 8vw, 50px);
+  line-height: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nc-input-group {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 35px;
+  padding: 3px;
+  margin: 0 15px;
+}
+
+.nc-input {
+  min-height: 60px;
+  background-color: transparent;
+  flex: 2;
+  padding: 0 45px;
+  border: none;
+  outline: none;
+}
+
+.nc-button {
+  flex: 1;
+  background-color: #ffb200;
+  border-radius: 50px;
+  padding: 24px 5px;
+  border: none;
+  cursor: pointer;
+}
+/* Newsletter Section Css End */
+
+/* Footer Section Css Start */
+.footer {
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  width: 100px;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.social-media a img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-support,
+.footer-links,
+.footer-contact {
+  margin: 20px 0;
+}
+
+.footer-support h4,
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-support ul,
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-support ul li,
+.footer-links ul li {
+  margin-bottom: 5px;
+}
+
+.footer-support ul li a,
+.footer-links ul li a,
+.footer-contact1 {
+  text-decoration: none;
+  color: #727278;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+  margin: auto;
+  max-width: 1200px;
+  margin-top: 65px;
+}
+.follow-text {
+  /*margin-top: 65px;*/
+  font-size: 16px;
+  color: #727278;
+}
+.social-media {
+  margin-top: 65px;
+}
+.Creator {
+  text-align: right;
+}
+.DesignedBy {
+  text-align: left;
+}
+/* Footer Section Css End */
+
+/* Media Query Start */
 @media screen and (max-width: 1440px) {
   .hero-hamburger-menu {
     display: none;
@@ -804,3 +971,13 @@ body {
 }
 
 /* Featured Jobs Section End Parviz*/
+@media screen and (max-width: 480px) {
+  .nc-container {
+    margin: 50px 5px;
+  }
+
+  .nc-input {
+    padding: 0 25px;
+  }
+}
+/* Media Query End */
