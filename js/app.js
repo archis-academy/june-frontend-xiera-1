@@ -281,6 +281,8 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
+
+
 /*     HAPPY USER BUTTON   */
 
 const incrementButton = document.getElementById("counter-el");
@@ -302,6 +304,7 @@ const packagesProduct =
       title: "BEGINNER",
       packageType: "Monthly Package",
       price: "17"
+
     }, {
       id: 2,
       title: "BASIC",
@@ -315,24 +318,25 @@ const packagesProduct =
       price: "37"
     }
   ],
-  yearly: [{
-    id: 1,
-    title: "BEGINNER",
-    packageType: "Yearly Package",
-    price: "57"
-  },
-  {
-    id: 2,
-    title: "BASIC",
-    packageType: "Yearly Package",
-    price: "67"
-  },
-  {
-    id: 3,
-    title: "PREMIUM",
-    packageType: "Yearly Package",
-    price: "77"
-  }]
+  yearly: [
+    {
+      id: 1,
+      title: "BEGINNER",
+      packageType: "Yearly Package",
+      price: "57"
+    },
+    {
+      id: 2,
+      title: "BASIC",
+      packageType: "Yearly Package",
+      price: "67"
+    },
+    {
+      id: 3,
+      title: "PREMIUM",
+      packageType: "Yearly Package",
+      price: "77"
+    }]
 }
 
 const swiperWrapper = document.querySelector("#swiper-items")
@@ -340,6 +344,11 @@ const swiperWrapper = document.querySelector("#swiper-items")
 const changeSwiperContent = (type) => {
   swiperWrapper.innerHTML = '';
   if (type === "monthly") {
+
+    document.querySelector(".monthly-btn").style.color = "purple";
+    document.querySelector(".yearly-btn").style.color = "black";
+
+
     swiperWrapper.innerHTML = packagesProduct.monthly.map((item) => {
       return `<div class="swiper-slide">
      <div class="card">
@@ -352,12 +361,14 @@ const changeSwiperContent = (type) => {
          <li>Registration</li>
          <li>Directory</li>
        </ul>
-       <button class="cta-button-blue">Get Started Now</button>
+       <button class="cta-button-${item.id}">Get Started Now</button>
      </div>
    </div>`
     }).join("")
   }
   else {
+    document.querySelector(".monthly-btn").style.color = "black";
+    document.querySelector(".yearly-btn").style.color = "purple";
     swiperWrapper.innerHTML = packagesProduct.yearly.map((item) => {
       return `<div class="swiper-slide">
      <div class="card">
@@ -370,7 +381,7 @@ const changeSwiperContent = (type) => {
          <li>Registration</li>
          <li>Directory</li>
        </ul>
-       <button class="cta-button-blue">Get Started Now</button>
+       <button class="cta-button-${item.id}">Get Started Now</button>
      </div>
    </div>`
     }).join("")
@@ -379,5 +390,6 @@ const changeSwiperContent = (type) => {
   swiper.update();
 }
 changeSwiperContent();
+
 
 

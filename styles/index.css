@@ -579,38 +579,19 @@ body {
 
 /* Pricing Section CSS Start */
 
-.swiper {
 
-  background-color: white;
-  border-radius: 15px;
-  width: 360px;
-  height: 550px;
-  grid-column-start: 5;
-  grid-row-start: 3;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-
-}
-
-.swiper-slide p {
-  color: rgb(141, 138, 138);
-}
 
 
 
 .main {
   display: flex;
   position: relative;
-  width: 1104px;
-  height: 776px;
+  max-width: 1104px;
+  flex-wrap: wrap-reverse;
   margin: 0 auto;
   margin-top: 200px;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
@@ -653,6 +634,28 @@ body {
 
 }
 
+.swiper {
+
+  background-color: white;
+  border-radius: 15px;
+  width: 360px;
+  height: 550px;
+  grid-column-start: 5;
+  grid-row-start: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+
+
+}
+
+.swiper-slide p {
+  color: rgb(141, 138, 138);
+}
+
 .text {
   display: block;
   font-size: 15px;
@@ -681,6 +684,7 @@ sup {
   align-items: center;
   text-align: center;
   margin-top: 40px;
+  line-height: 2;
 
 }
 
@@ -695,66 +699,67 @@ sup {
   margin: 10px;
 }
 
-.cta-button-blue {
+.cta-button-1,
+.cta-button-2,
+.cta-button-3 {
+
+  display: inline-block;
+  width: 100%;
+  max-width: 224px;
+  margin: 0 auto;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: large;
+  cursor: pointer;
+}
+
+.cta-button-1 {
   background: #78a9e0;
-  display: inline-block;
-  width: 225px;
-  margin: 0 auto;
-  color: white;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 50px;
-  font-size: large;
+
 }
 
-.cta-button-purple {
+.cta-button-2 {
   background: #9470c6;
-  display: inline-block;
-  width: 225px;
-  margin: 0 auto;
-  color: white;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 50px;
-  font-size: large;
+
 }
 
-.cta-button-org {
+.cta-button-3 {
   background: #e9bc7a;
-  display: inline-block;
-  width: 225px;
-  margin: 0 auto;
-  color: white;
-  padding: 20px 40px;
-  border: none;
-  border-radius: 50px;
-  font-size: large;
+
 }
 
 .pricing-info {
   display: block;
-  margin-top: 20%;
-  margin-left: 40px;
-  width: 292px;
-  height: 278px;
+width: 100%;
+height: 100%;
+  max-width: 292px;
+  max-height: 278px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  padding: 5px 0px 0px 10px;
+  padding: 5px 0px 20px 10px;
+  line-height: 1.7;
+  
 
 }
 
-.pricing-info h3 {
+.price-text {
+  margin-top: 10px;
+}
+
+.price-text h3 {
   color: #f9af60;
   font-size: 22px;
 
 }
 
-.pricing-info h1 {
+.price-text h1 {
   font-weight: 600;
 
 }
 
-.pricing-info p {
+.price-text p {
   font-size: 18px;
   color: #5B5A62;
 }
@@ -772,11 +777,12 @@ sup {
   border-color: transparent;
   background-color: transparent;
   cursor: pointer;
+  color: black;
 }
 
 .monthly-btn:hover {
   transform: scale(1.1);
-  color: #864BD8;
+
 }
 
 .yearly-btn {
@@ -786,12 +792,13 @@ sup {
   border-color: transparent;
   background-color: transparent;
   cursor: pointer;
+  color: black;
 
 }
 
 .yearly-btn:hover {
   transform: scale(1.1);
-  color: #864BD8;
+
 }
 
 .circle {
@@ -805,6 +812,11 @@ sup {
 .cizgi {
   border: 1px solid #bcbcbc;
   height: 26px;
+}
+@media(max-width: 600px){
+  .circle{
+    display: none;
+  }
 }
 
 /* Pricing Section CSS End */
