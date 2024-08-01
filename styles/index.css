@@ -1,7 +1,10 @@
 /* Hero Section CSS Start */
 body {
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
+
+/* Hero Section Css Start */
 
 .hero-container {
   max-width: 1252px;
@@ -102,7 +105,7 @@ body {
   border-radius: 10px;
 }
 
-.hero-menu-dropdown-item>a {
+.hero-menu-dropdown-item > a {
   width: 100%;
   text-decoration: none;
   color: #000;
@@ -110,7 +113,7 @@ body {
   font-size: 17px;
 }
 
-.hero-menu-dropdown-item>a:hover {
+.hero-menu-dropdown-item > a:hover {
   background-color: #e7e7e7ae;
 }
 
@@ -165,7 +168,6 @@ body {
   gap: 20px;
   margin-top: 50px;
 }
-
 .hero-mobil-menu-item {
   font-size: 25px;
   display: flex;
@@ -429,8 +431,8 @@ body {
   white-space: nowrap;
 }
 
-.hero-modal-table-head>tr>th,
-.hero-modal-table-body>tr>td {
+.hero-modal-table-head > tr > th,
+.hero-modal-table-body > tr > td {
   font-size: clamp(10px, 3vw, 17px);
   width: 360px;
   padding: 10px 0px;
@@ -439,10 +441,12 @@ body {
   border: none;
 }
 
-.hero-modal-table-body>tr:hover {
+.hero-modal-table-body > tr:hover {
   background-color: #03badfb4;
 }
-
+/* Hero Section Css End *
+/
+/* Onboarding Section Css Start */
 .os-container {
   display: flex;
   flex-direction: column;
@@ -473,6 +477,7 @@ body {
 
 .os-card-container {
   max-width: 1085px;
+  min-height: 486px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -524,7 +529,168 @@ body {
   color: #6f6f75;
   text-align: center;
 }
+/* Onboarding Section Css End */
 
+/* Newsletter Section Css Start */
+.nc-container {
+  margin: 50px auto;
+  max-width: 1170px;
+  padding: 90px 15px;
+  background-image: url("/images/newsletter-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+.nc-title {
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 5px;
+  color: #bc95f2;
+}
+
+.nc-text {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 8vw, 50px);
+  line-height: 60px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nc-input-group {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 35px;
+  padding: 3px;
+  margin: 0 15px;
+}
+
+.nc-input {
+  min-height: 60px;
+  background-color: transparent;
+  flex: 2;
+  padding: 0 45px;
+  border: none;
+  outline: none;
+}
+
+.nc-button {
+  flex: 1;
+  background-color: #ffb200;
+  border-radius: 50px;
+  padding: 24px 5px;
+  border: none;
+  cursor: pointer;
+}
+/* Newsletter Section Css End */
+
+/* Footer Section Css Start */
+.footer {
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  width: 100px;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.social-media a img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-support,
+.footer-links,
+.footer-contact {
+  margin: 20px 0;
+}
+
+.footer-support h4,
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-support ul,
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-support ul li,
+.footer-links ul li {
+  margin-bottom: 5px;
+}
+
+.footer-support ul li a,
+.footer-links ul li a,
+.footer-contact1 {
+  text-decoration: none;
+  color: #727278;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+  margin: auto;
+  max-width: 1200px;
+  margin-top: 65px;
+}
+.follow-text {
+  /*margin-top: 65px;*/
+  font-size: 16px;
+  color: #727278;
+}
+.social-media {
+  margin-top: 65px;
+}
+.Creator {
+  text-align: right;
+}
+.DesignedBy {
+  text-align: left;
+}
+/* Footer Section Css End */
+
+/* Media Query Start */
 @media screen and (max-width: 1440px) {
   .hero-hamburger-menu {
     display: none;
@@ -576,6 +742,245 @@ body {
 }
 
 /* Hero Section CSS End */
+
+/* Featured Jobs Section Start Parviz*/
+
+.featured-jobs-container {
+  background-color: #efeef3;
+  padding: 20px;
+}
+
+.featured-jobs {
+  max-width: 1085px;
+  margin: 0 auto;
+}
+
+.featured-jobs-header-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.featured-jobs-header-container .featured-jobs-header h2 {
+  color: #864bd8;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.featured-jobs-header-container .featured-jobs-header h1 {
+  color: #292929;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  letter-spacing: -1px;
+}
+
+.featured-jobs-header-container .featured-jobs-header h3 {
+  color: #5b5a62;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: -0.4px;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons button:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons .arrow-left {
+  background-color: #ffffff;
+}
+.featured-jobs-header-container .jobs-swiper-buttons .arrow-right {
+  background-color: #f57343;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons .arrow-right i {
+  color: #ffffff;
+}
+
+.featured-jobs-header-container .jobs-swiper-buttons button i {
+  font-size: 20px;
+}
+
+.vacansy-box-container {
+  margin: 80px 0 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+}
+
+.vacansy-card {
+  max-width: 330px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.close-button i {
+  font-size: 30px;
+}
+
+.vacansy-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.vacansy-card .vacansy-header-content {
+  display: flex;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 16px;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-header h3 {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.vacansy-card .vacansy-header-content .vacansy-header h4 {
+  color: #b5b8c6;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.vacansy-card .vacansy-text {
+  margin-top: 34px;
+  margin-bottom: 45px;
+}
+
+.vacansy-card .vacansy-text p {
+  font-size: 24px;
+  letter-spacing: -0.52px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.vacansy-card .vacansy-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vacansy-card .vacansy-info p {
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+.vacansy-info > p:first-child {
+  color: #f36532;
+  background-color: #f8ece8;
+  margin-right: 10px;
+}
+
+.vacansy-info > p:nth-child(2) {
+  color: #838383;
+  background-color: #f8f7fe;
+}
+
+.vacansy-see-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vacansy-see-all .see-all-vacansy {
+  background-color: #864bd8;
+  color: #fff9f8;
+  padding: 20px 30px;
+  border-radius: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.vacansy-see-all .see-all-vacansy:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.job_popup {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .featured-jobs-header-container .jobs-swiper-buttons {
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .vacansy-box-container {
+    margin-top: 20px;
+  }
+}
+
+/* Featured Jobs Section End Parviz*/
+@media screen and (max-width: 480px) {
+  .nc-container {
+    margin: 50px 5px;
+  }
+
+  .nc-input {
+    padding: 0 25px;
+  }
+}
+/* Media Query End */
 
 /* Pricing Section CSS Start */
 
