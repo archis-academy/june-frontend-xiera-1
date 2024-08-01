@@ -516,7 +516,7 @@ body {
   .testimonial-header .testimonial-header-testimonial-title {
     font-size: clamp(10px, 4vw, 16px);
     line-height: clamp(15px, 4vw, 24px);
-    /* letter-spacing: 20%; */
+    letter-spacing: 20%;
     font-weight: 600;
     color: #0d8772;
   }
@@ -563,38 +563,41 @@ body {
     padding: 10px;
     gap: 5px;
   }
+
   .testimonial-content-customer-info-header {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
   .testimonial-content-customer-info-header h2 {
-    font-size: 22px;
+    font-size: clamp(16px, 4vw, 22px);
     font-weight: 700;
-    line-height: 22px;
+    line-height: clamp(20px, 4vw, 32px);
     letter-spacing: 0.4px;
   }
   .testimonial-content-customer-info-header p {
-    font-size: 14px;
+    font-size: clamp(10px, 4vw, 14px);
     font-weight: 500;
-    line-height: 14px;
+    line-height: clamp(16px, 4vw, 22px);
     letter-spacing: 0.4px;
     color: #83828a;
   }
   .testimonial-content-customer-info-details {
-    font-size: 20px;
+    font-size: clamp(16px, 4vw, 20px);
     font-weight: 500;
-    line-height: 36px;
+    line-height: clamp(33px, 4vw, 32px);
     letter-spacing: 0.4px;
     font-style: italic;
     color: #5b5a62;
     margin-bottom: 20px;
+    height: 150px;
+    overflow: auto;
   }
   .testimonial-content-customer-info h3 {
     font-weight: 900;
     line-height: 45px;
     letter-spacing: 0.4px;
-    font-size: 32px;
+    font-size: clamp(20px, 4vw, 32px);
   }
   .testimonial-content-customer-info-arrow {
     width: 70px;
