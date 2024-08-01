@@ -732,15 +732,15 @@ sup {
 
 .pricing-info {
   display: block;
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
   max-width: 292px;
   max-height: 278px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   padding: 5px 0px 20px 10px;
   line-height: 1.7;
-  
+
 
 }
 
@@ -813,9 +813,20 @@ height: 100%;
   border: 1px solid #bcbcbc;
   height: 26px;
 }
-@media(max-width: 600px){
-  .circle{
+
+@media(max-width: 600px) {
+  .circle {
     display: none;
+  }
+
+  .happy-user {
+    grid-column-start: 5;
+    grid-row-start: 2;
+  }
+
+  .swiper {
+    grid-column-start: 3;
+    grid-row-start: 3;
   }
 }
 
