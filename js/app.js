@@ -773,3 +773,122 @@ const changeSwiperContent = (type) => {
   swiper.update();
 }
 changeSwiperContent();
+
+
+const customers = [{
+  name: "Saitama Sensei",
+  imageUrl: "images/0.png",
+  work: "frontend development",
+  description: "Wanpanman) is a Japanese superhero manga series created by One. It tells the story of Saitama, an independent superhero who, because he can defeat any opponent with a single punch due to having trained himself to his peak condition, grows bored from a lack of challenge, setting out to find powerful opponents, while making allies of other heroes as well.",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "luffy Senpai",
+  imageUrl: "images/1.png",
+  work: "backend development",
+  description: "“One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda. One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "John Med",
+  imageUrl: "images/2.png",
+  work: "web desingner",
+  description: "“Really Jobfind is the best platform to get any kind of job, aspecially their support was awesome, They have tried to level best to give best support of new candidate.”",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "levi Acerman",
+  imageUrl: "images/3.png",
+  work: "full stack development",
+  description: "Attack on Titan (Japanese: 進撃の巨人, Hepburn: Shingeki no Kyojin, lit. 'The Advancing Giant') is a Japanese manga series written and illustrated by Hajime Isayama. It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans; the story follows Eren Yeager, who vows to exterminate the Titans after they bring about the destruction of his hometown and the death of his mother. It was serialized in Kodansha's monthly magazine Bessatsu Shōnen Magazine from September 2009 to April 2021, with its chapters collected in 34 tankōbon volumes.",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "Nicola Tesla",
+  imageUrl: "images/4.png",
+  work: "embedded",
+  description: "Nikola Tesla (/ˈtɛslə/;[2] Serbian Cyrillic: Никола Тесла, [nǐkola têsla]; 10 July [O.S. 28 June] 1856 – 7 January 1943) was a Serbian-American[3][4] engineer, futurist, and inventor. He is known for his contributions to the design of the modern alternating current (AC) electricity supply system.[5]",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "John Wick",
+  imageUrl: "images/5.png",
+  work: "frontend development",
+  description: "“Really Jobfind is the best platform to get any kind of job, aspecially their support was awesome, They have tried to level best to give best support of new candidate.”",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "Bleach",
+  imageUrl: "images/6.png",
+  work: "backend development",
+  description: "Bleach (stylized in all caps) is a Japanese manga series written and illustrated by Tite Kubo. It follows the adventures of a teenager Ichigo Kurosaki, who obtains the powers of a Soul Reaper—a death personification similar to a Grim Reaper—from another Soul Reaper, Rukia Kuchiki. His new-found powers allow him to take on the duties of defending humans from evil spirits and guiding departed souls to the afterlife, and set him on journeys to various ghostly realms of existence.",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+{
+  name: "Demon Slayer",
+  imageUrl: "images/7.png",
+  work: "mobile development",
+  description: "Demon Slayer: Kimetsu no Yaiba – To the Hashira Training (Japanese: 鬼滅の刃 柱稽古編, Hepburn: Kimetsu no Yaiba Hashira Geiko-hen), also known simply as Demon Slayer: To the Hashira Training, is a 2024 Japanese animated dark fantasy action film based on the Swordsmith Village and 'Hashira Training' arcs of the 2016–20 manga series Demon Slayer Kimetsu no Yaiba by Koyoharu Gotouge.",
+  rate: "images/group-star.svg",
+  status: "active",
+},
+
+
+]
+
+
+
+const testimonialContent = document.querySelector(".testimonial-content")
+const customerImage = document.querySelector(".testimonial-content-customer-img-customer");
+const customerName = document.querySelector(".testimonial-content-customer-info-header-h2");
+const customerWork = document.querySelector(".testimonial-content-customer-info-header-p");
+const customerDescription = document.querySelector(".testimonial-content-customer-info-details");
+const rateSvg = document.querySelector(".testimonial-content-customer-info-rate")
+const prevButton = document.querySelector("#prev")
+const nextButton = document.querySelector("#next")
+
+let currentIndex = 0;
+function updateCustomerDetails(customer) {
+customerImage.src = customer.imageUrl;
+customerImage.alt = customer.name;
+customerName.textContent = customer.name;
+customerWork.textContent = customer.work;
+customerDescription.textContent = customer.description;
+rateSvg.src = customer.rate
+}
+
+function updateCarousel() {
+updateCustomerDetails(customers[currentIndex]);
+testimonialContent.classList.add('fade-out');
+prevButton.classList.toggle('arrow-disabled', currentIndex === 0);
+nextButton.classList.toggle('arrow-disabled', currentIndex === customers.length - 1);
+
+testimonialContent.addEventListener('transitionend', () => {
+  testimonialContent.classList.remove('fade-out');
+},{ once: true });
+}
+
+prevButton.addEventListener('click', () => {
+
+if (currentIndex > 0) {
+    currentIndex--;
+    updateCarousel();
+}
+});
+
+nextButton.addEventListener('click', () => {
+if (currentIndex < customers.length - 1) {
+    currentIndex++;
+    updateCarousel();
+}
+});
+
+
+updateCarousel();
