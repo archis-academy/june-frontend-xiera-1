@@ -723,7 +723,7 @@ const jsSwiperWrapper = document.querySelector("#jsSwiperWrapper");
 
 jsSwiperWrapper.innerHTML = jobsCategories
   .map((jobCategory) => {
-    return `<div class="swiper-slide">
+    return `<div class="swiper-slide js-swiper-slider">
     <img
     src="${jobCategory.img}"
     alt="${jobCategory.title}"
