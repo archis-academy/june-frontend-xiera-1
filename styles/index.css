@@ -601,6 +601,127 @@ body {
 }
 /* Newsletter Section Css End */
 
+/* Jobs Section CSS Start */
+.swiper.js-swiper {
+  padding: 30px 15px !important;
+  width: 80%;
+  height: 100%;
+}
+
+.swiper-wrapper.js-swiper-wrapper {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swiper-slide.js-swiper-slider {
+  padding: 20px;
+  max-width: 190px !important;
+  min-height: 170px !important;
+  border: 1px solid rgba(177, 177, 177, 0.44);
+  border-radius: 15px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.js-slide-img {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 10px;
+}
+
+.js-slide-title {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(9px, 5vw, 18px);
+  font-weight: 600;
+  color: #292929;
+  margin-bottom: 10px;
+}
+
+.js-slide-text {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(6px, 5vw, 13px);
+  font-weight: 500;
+  color: #919098;
+  text-align: center;
+}
+
+.js-swiper-pagination {
+  max-width: 210px !important;
+  height: 5px;
+  margin: 0 auto;
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  border-radius: 20px;
+  background-color: #864bd858;
+  overflow: hidden;
+}
+
+.js-swiper-pagination-bullet {
+  width: 70px !important;
+  height: 5px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background-color: #864bd8 !important;
+  opacity: 0.1;
+  cursor: pointer;
+}
+
+.js-swiper-pagination-bullet-active {
+  background-color: #864bd8 !important;
+  opacity: 1 !important;
+}
+
+.js-container {
+  max-width: 1120px;
+  min-height: 570px;
+  margin: 0 auto;
+  padding: 130px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.js-subtitle {
+  color: #f57343;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.js-title {
+  color: #292929;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 8vw, 50px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.js-text {
+  max-width: 470px;
+  text-align: center;
+  color: #5b5a62;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(12px, 8vw, 18px);
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .swiper {
+    width: 220px;
+  }
+}
+
+/* Jobs Section CSS End */
+
 /* Footer Section Css Start */
 .footer {
   padding: 20px 0;
@@ -984,10 +1105,6 @@ body {
 
 /* Pricing Section CSS Start */
 
-
-
-
-
 .main {
   display: flex;
   position: relative;
@@ -1005,7 +1122,6 @@ body {
   grid-template-rows: repeat(14, 50px);
 }
 
-
 .happy-user {
   background: white;
   display: flex;
@@ -1020,7 +1136,6 @@ body {
   border-radius: 15px;
   grid-column-start: 3;
   grid-row-start: 8;
-
 }
 
 .emoji {
@@ -1031,16 +1146,13 @@ body {
   background-color: transparent;
   border-color: transparent;
   cursor: pointer;
-
 }
 
 .emoji:hover {
   transform: scale(1.1);
-
 }
 
 .swiper {
-
   background-color: white;
   border-radius: 15px;
   width: 360px;
@@ -1053,8 +1165,6 @@ body {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-
-
 }
 
 .swiper-slide p {
@@ -1064,12 +1174,11 @@ body {
 .text {
   display: block;
   font-size: 15px;
-
 }
 
 strong {
   display: block;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .dollar {
@@ -1090,12 +1199,11 @@ sup {
   text-align: center;
   margin-top: 40px;
   line-height: 2;
-
 }
 
 .features {
   list-style-type: none;
-  color: #5B5A62;
+  color: #5b5a62;
   padding: 5px;
   font-size: large;
 }
@@ -1107,7 +1215,6 @@ sup {
 .cta-button-1,
 .cta-button-2,
 .cta-button-3 {
-
   display: inline-block;
   width: 100%;
   max-width: 224px;
@@ -1122,17 +1229,14 @@ sup {
 
 .cta-button-1 {
   background: #78a9e0;
-
 }
 
 .cta-button-2 {
   background: #9470c6;
-
 }
 
 .cta-button-3 {
   background: #e9bc7a;
-
 }
 
 .pricing-info {
@@ -1145,8 +1249,6 @@ sup {
   border-radius: 15px;
   padding: 5px 0px 20px 10px;
   line-height: 1.7;
-
-
 }
 
 .price-text {
@@ -1156,24 +1258,21 @@ sup {
 .price-text h3 {
   color: #f9af60;
   font-size: 22px;
-
 }
 
 .price-text h1 {
   font-weight: 600;
-
 }
 
 .price-text p {
   font-size: 18px;
-  color: #5B5A62;
+  color: #5b5a62;
 }
 
 .btn {
   display: flex;
   justify-content: space-evenly;
   margin-top: 40px;
-
 }
 
 .monthly-btn {
@@ -1187,23 +1286,19 @@ sup {
 
 .monthly-btn:hover {
   transform: scale(1.1);
-
 }
 
 .yearly-btn {
-
   font-size: 20px;
   font-weight: 600;
   border-color: transparent;
   background-color: transparent;
   cursor: pointer;
   color: black;
-
 }
 
 .yearly-btn:hover {
   transform: scale(1.1);
-
 }
 
 .circle {
@@ -1219,7 +1314,7 @@ sup {
   height: 26px;
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .circle {
     display: none;
   }
@@ -1299,7 +1394,7 @@ sup {
 }
 
 .testimonial-content-customer-info {
- max-width: 477px;
+  max-width: 477px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -1357,10 +1452,9 @@ sup {
     flex-direction: column;
     align-items: center;
   }
-  .testimonial-content-customer-info-header,.testimonial-header-customer-title{
-text-align: center;
+  .testimonial-content-customer-info-header,
+  .testimonial-header-customer-title {
+    text-align: center;
   }
- 
-
-} 
+}
 /*!JU-1-testimonial-section end */

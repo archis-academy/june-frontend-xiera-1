@@ -1,429 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xiera</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Xiera</title>
-  <link rel="stylesheet" href="styles/index.css" />
-  <link rel="stylesheet" href="styles/shared.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
-  <script src="https://kit.fontawesome.com/cd7b1b5648.js" crossorigin="anonymous"></script>
-  
-</head>
+    <script
+      src="https://kit.fontawesome.com/cd7b1b5648.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-  <!-- #Hero Section Start -->
-  <div class="hero-container">
-    <!-- =>Navbar Start -->
-    <nav class="hero-nav">
-      <div class="hero-nav-logo">
-        <a href="#" class="hero-logo-link"><img src="images/xiera-logo.png" alt="xiera logo" class="hero-logo" /></a>
-      </div>
-
-      <div class="hero-nav-menu">
-        <ul class="hero-menu-items">
-          <li class="hero-menu-item dropdown">
-            Find Jobs
-            <img id="hero-menu-arrow-img" src="images/bottom-arrow.png" alt="bottom arrow" class="hero-menu-arrow" />
-            <div class="hero-menu-dropdown-item">
-              <a href="#" class="hero-dropdown-link">Frontend Developer</a>
-              <a href="#" class="hero-dropdown-link">Backend Developer</a>
-              <a href="#" class="hero-dropdown-link">Fullstack Developer</a>
-              <a href="#" class="hero-dropdown-link">UI/UX Designer</a>
-            </div>
-          </li>
-          <li class="hero-menu-item dropdown">
-            Recent Posts
-            <img id="hero-menu-arrow-img" src="images/bottom-arrow.png" alt="bottom arrow" class="hero-menu-arrow" />
-            <div class="hero-menu-dropdown-item">
-              <a href="#" class="hero-dropdown-link">Last 5 Post</a>
-              <a href="#" class="hero-dropdown-link">Last 10 Posts</a>
-              <a href="#" class="hero-dropdown-link">All Posts</a>
-            </div>
-          </li>
-          <li class="hero-menu-item dropdown">
-            Company
-            <img id="hero-menu-arrow-img" src="images/bottom-arrow.png" alt="bottom arrow" class="hero-menu-arrow" />
-            <div class="hero-menu-dropdown-item">
-              <a href="#" class="hero-dropdown-link">Best 5 Companies</a>
-              <a href="#" class="hero-dropdown-link">Best 10 Companies</a>
-              <a href="#" class="hero-dropdown-link">All Companies</a>
-            </div>
-          </li>
-        </ul>
-        <ul id="hero-user-entering" class="hero-menu-accnt">
-          <li class="hero-menu-accnt-item">
-            <a href="login.html" class="hero-log-in-btn">Log in</a>
-          </li>
-          <li class="hero-menu-accnt-item">
-            <a href="register.html" class="hero-create-btn">Create Account</a>
-          </li>
-        </ul>
-        <ul id="hero-user-entered" class="hero-menu-user-accnt">
-          <li class="hero-menu-accnt-item">
-            <a id="user-info" href="#" class="hero-log-in-btn"></a>
-          </li>
-          <li class="hero-menu-accnt-item">
-            <a href="#" class="hero-create-btn" onclick="logOut()">Log out</a>
-          </li>
-        </ul>
-      </div>
-      <div id="hero-mobil-menu-icon" class="hero-hamburger-menu" onclick="mobilMenuHandler()">
-        <img id="hero-hamburger-icon" src="images/hamburger-menu.png" alt="hamburger menu icon"
-          class="hero-hamburger-icon-img" />
-        <img id="hero-close-icon" src="images/menu-closed.png" alt="menu closed image"
-          class="hero-hamburger-closed-icon" />
-      </div>
-      <!-- *Mobil Menu Start -->
-      <div id="hero-mobil-menu" class="hero-mobil-menu">
-        <ul id="hero-user-mobil-entering" class="hero-mobil-menu-entering-accnt">
-          <li class="hero-mobil-menu-accnt-item">
-            <a href="login.html" class="hero-log-in-btn">Log in</a>
-          </li>
-          <li class="hero-mobil-menu-accnt-item">
-            <a href="register.html" class="hero-create-btn">Create Account</a>
-          </li>
-        </ul>
-        <ul id="hero-user-mobil-entered" class="hero-mobil-menu-entered-accnt">
-          <li class="hero-mobil-menu-accnt-item">
-            <a id="user-mobil-info" href="#" class="hero-log-in-btn"></a>
-          </li>
-          <li class="hero-mobil-menu-accnt-item">
-            <a href="#" class="hero-create-btn" onclick="logOut()">Log out</a>
-          </li>
-        </ul>
-        <ul class="hero-mobil-menu-items">
-          <li class="hero-mobil-menu-item hero-mobil-dropdown">
-            Find Jobs
-            <ul class="hero-mobil-dropdown-content">
-              <li class="hero-mobil-submenu-item">Frontend Developer</li>
-              <li class="hero-mobil-submenu-item">Backend Developer</li>
-              <li class="hero-mobil-submenu-item">Fullstack Developer</li>
-              <li class="hero-mobil-submenu-item">UI/UX Designer</li>
-            </ul>
-          </li>
-          <li class="hero-mobil-menu-item hero-mobil-dropdown">
-            Recent Posts
-            <ul class="hero-mobil-dropdown-content">
-              <li class="hero-mobil-submenu-item">Last 5 Posts</li>
-              <li class="hero-mobil-submenu-item">Last 10 Posts</li>
-              <li class="hero-mobil-submenu-item">All Posts</li>
-            </ul>
-          </li>
-          <li class="hero-mobil-menu-item hero-mobil-dropdown">
-            Company
-            <ul class="hero-mobil-dropdown-content">
-              <li class="hero-mobil-submenu-item">Best 5 Companies</li>
-              <li class="hero-mobil-submenu-item">Best 10 Companies</li>
-              <li class="hero-mobil-submenu-item">All Companies</li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <!-- *Mobil Menu End -->
-    </nav>
-    <!-- =>Navbar End -->
-    <!-- =>Hero Content Start -->
-    <div class="hero-title-section">
-      <h1 class="hero-title">
-        The home of your dream j<img src="images/title-o.png" alt="title o letter" class="hero-title-o-letter" />b
-      </h1>
-      <h4 class="hero-subtitle">
-        You do not have the right to remain silent… let us know what it takes
-        to challenge you
-      </h4>
-    </div>
-    <!-- =>Hero Content End -->
-    <!-- =>Hero Search Bar Start -->
-    <div class="hero-search">
-      <div class="hero-search-items">
-        <div class="hero-search-title-box">
-          <img src="images/magnifying-glass-solid.svg" alt="search icon" class="hero-search-icon" />
-          <input type="text" class="hero-title-search" placeholder="Job Title or keyworld" />
-        </div>
-        <div class="hero-search-location-box">
-          <img src="images/location-dot-solid.svg" alt="location icon" class="hero-location-icon" />
-          <input type="text" class="hero-location-search" placeholder="Location" />
+  <body>
+    <!-- #Hero Section Start -->
+    <div class="hero-container">
+      <!-- =>Navbar Start -->
+      <nav class="hero-nav">
+        <div class="hero-nav-logo">
+          <a href="#" class="hero-logo-link"
+            ><img
+              src="images/xiera-logo.png"
+              alt="xiera logo"
+              class="hero-logo"
+          /></a>
         </div>
 
-        <select name="hero-job-type" id="hero-job-type" class="hero-search-select">
-          <option value="default">Pick a model</option>
-        </select>
-        <button class="hero-search-btn" onclick="searchSubmitHandler()">
-          Search Job
-        </button>
-      </div>
-      <div class="hero-trending-search">
-        <h3 class="hero-trending-search-title">Trending Searches</h3>
-        <ul class="hero-trending-search-list">
-          <li class="hero-trending-search-item">
-            <button class="hero-tranding-search-btn">Remote Job</button>
-          </li>
-          <li class="hero-trending-search-item">
-            <button class="hero-tranding-search-btn">UI/UX Design</button>
-          </li>
-          <li class="hero-trending-search-item">
-            <button class="hero-tranding-search-btn">Product Design</button>
-          </li>
-          <li class="hero-trending-search-item">
-            <button class="hero-tranding-search-btn">Development</button>
-          </li>
-          <li class="hero-trending-search-item">
-            <button class="hero-tranding-search-btn">Work from Home</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- =>Hero Search Bar End -->
-    <!-- =>Hero Images Start -->
-    <img src="images/saly.png" alt="sally images" class="hero-sally-img" />
-    <img src="images/doodle.png" alt="Doodle images" class="hero-doodle-img" />
-    <img src="images/bety.png" alt="Bety image" class="hero-bety-img" />
-    <img src="images/rainbow.png" alt="Bety image" class="hero-rainbow-img" />
-    <!-- =>Hero Images End -->
-  </div>
-  <!-- #Hero Section Start -->
-
-  <!-- =>Hero Filtering Modal Start -->
-  <div id="hero-modal-container" class="hero-modal-container">
-    <div class="hero-modal">
-      <img id="hero-modal-close-icon" src="images/menu-closed.png" alt="" class="hero-modal-close-icon" />
-      <h3 class="hero-modal-title">Filtering Results</h3>
-      <table class="hero-modal-table">
-        <thead class="hero-modal-table-head">
-          <tr>
-            <th>Title</th>
-            <th>Company</th>
-            <th>Location</th>
-            <th>Working Type</th>
-          </tr>
-        </thead>
-        <tbody id="hero-modal-table-body" class="hero-modal-table-body">
-          <!-- Data will be rendered here -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <!-- =>Hero Filtering Modal End -->
-  <!-- Onboarding Section Start -->
-  <div class="os-container">
-    <h3 class="os-title">HOW IT WORKS</h3>
-    <p class="os-text">Simple steps to get your next job</p>
-    <div class="os-card-container">
-      <div class="os-card">
-        <img src="images/check-purple.png" alt="" class="os-card-img" />
-        <h3 class="os-card-title">Register Your Account</h3>
-        <p class="os-card-text">
-          Capitalize on low hanging fruit to identify added Override the
-          digital
-        </p>
-      </div>
-      <div class="os-card">
-        <img src="images/id.png" alt="" class="os-card-img" />
-        <h3 class="os-card-title">Update Resume</h3>
-        <p class="os-card-text">
-          Capitalize on low hanging fruit to identify added Override the
-          digital
-        </p>
-      </div>
-      <div class="os-card">
-        <img src="images/check-orange.png" alt="" class="os-card-img" />
-        <h3 class="os-card-title">Apply for News Jobs</h3>
-        <p class="os-card-text">
-          Capitalize on low hanging fruit to identify added Override the
-          digital
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Onboarding Section End -->
-
-  <!-- Futured Jobs Started - Parviz -->
-  <div class="featured-jobs-container">
-    <div class="featured-jobs">
-      <div class="featured-jobs-header-container">
-        <div class="featured-jobs-header">
-          <h2>JOBS NEAR ME</h2>
-          <h1>Featured Jobs</h1>
-          <h3>Employee and Employment Company.</h3>
+        <div class="hero-nav-menu">
+          <ul class="hero-menu-items">
+            <li class="hero-menu-item dropdown">
+              Find Jobs
+              <img
+                id="hero-menu-arrow-img"
+                src="images/bottom-arrow.png"
+                alt="bottom arrow"
+                class="hero-menu-arrow"
+              />
+              <div class="hero-menu-dropdown-item">
+                <a href="#" class="hero-dropdown-link">Frontend Developer</a>
+                <a href="#" class="hero-dropdown-link">Backend Developer</a>
+                <a href="#" class="hero-dropdown-link">Fullstack Developer</a>
+                <a href="#" class="hero-dropdown-link">UI/UX Designer</a>
+              </div>
+            </li>
+            <li class="hero-menu-item dropdown">
+              Recent Posts
+              <img
+                id="hero-menu-arrow-img"
+                src="images/bottom-arrow.png"
+                alt="bottom arrow"
+                class="hero-menu-arrow"
+              />
+              <div class="hero-menu-dropdown-item">
+                <a href="#" class="hero-dropdown-link">Last 5 Post</a>
+                <a href="#" class="hero-dropdown-link">Last 10 Posts</a>
+                <a href="#" class="hero-dropdown-link">All Posts</a>
+              </div>
+            </li>
+            <li class="hero-menu-item dropdown">
+              Company
+              <img
+                id="hero-menu-arrow-img"
+                src="images/bottom-arrow.png"
+                alt="bottom arrow"
+                class="hero-menu-arrow"
+              />
+              <div class="hero-menu-dropdown-item">
+                <a href="#" class="hero-dropdown-link">Best 5 Companies</a>
+                <a href="#" class="hero-dropdown-link">Best 10 Companies</a>
+                <a href="#" class="hero-dropdown-link">All Companies</a>
+              </div>
+            </li>
+          </ul>
+          <ul id="hero-user-entering" class="hero-menu-accnt">
+            <li class="hero-menu-accnt-item">
+              <a href="login.html" class="hero-log-in-btn">Log in</a>
+            </li>
+            <li class="hero-menu-accnt-item">
+              <a href="register.html" class="hero-create-btn">Create Account</a>
+            </li>
+          </ul>
+          <ul id="hero-user-entered" class="hero-menu-user-accnt">
+            <li class="hero-menu-accnt-item">
+              <a id="user-info" href="#" class="hero-log-in-btn"></a>
+            </li>
+            <li class="hero-menu-accnt-item">
+              <a href="#" class="hero-create-btn" onclick="logOut()">Log out</a>
+            </li>
+          </ul>
         </div>
-        <div class="jobs-swiper-buttons">
-          <button class="arrow-left">
-            <i class="fa-solid fa-arrow-left"></i>
+        <div
+          id="hero-mobil-menu-icon"
+          class="hero-hamburger-menu"
+          onclick="mobilMenuHandler()"
+        >
+          <img
+            id="hero-hamburger-icon"
+            src="images/hamburger-menu.png"
+            alt="hamburger menu icon"
+            class="hero-hamburger-icon-img"
+          />
+          <img
+            id="hero-close-icon"
+            src="images/menu-closed.png"
+            alt="menu closed image"
+            class="hero-hamburger-closed-icon"
+          />
+        </div>
+        <!-- *Mobil Menu Start -->
+        <div id="hero-mobil-menu" class="hero-mobil-menu">
+          <ul
+            id="hero-user-mobil-entering"
+            class="hero-mobil-menu-entering-accnt"
+          >
+            <li class="hero-mobil-menu-accnt-item">
+              <a href="login.html" class="hero-log-in-btn">Log in</a>
+            </li>
+            <li class="hero-mobil-menu-accnt-item">
+              <a href="register.html" class="hero-create-btn">Create Account</a>
+            </li>
+          </ul>
+          <ul
+            id="hero-user-mobil-entered"
+            class="hero-mobil-menu-entered-accnt"
+          >
+            <li class="hero-mobil-menu-accnt-item">
+              <a id="user-mobil-info" href="#" class="hero-log-in-btn"></a>
+            </li>
+            <li class="hero-mobil-menu-accnt-item">
+              <a href="#" class="hero-create-btn" onclick="logOut()">Log out</a>
+            </li>
+          </ul>
+          <ul class="hero-mobil-menu-items">
+            <li class="hero-mobil-menu-item hero-mobil-dropdown">
+              Find Jobs
+              <ul class="hero-mobil-dropdown-content">
+                <li class="hero-mobil-submenu-item">Frontend Developer</li>
+                <li class="hero-mobil-submenu-item">Backend Developer</li>
+                <li class="hero-mobil-submenu-item">Fullstack Developer</li>
+                <li class="hero-mobil-submenu-item">UI/UX Designer</li>
+              </ul>
+            </li>
+            <li class="hero-mobil-menu-item hero-mobil-dropdown">
+              Recent Posts
+              <ul class="hero-mobil-dropdown-content">
+                <li class="hero-mobil-submenu-item">Last 5 Posts</li>
+                <li class="hero-mobil-submenu-item">Last 10 Posts</li>
+                <li class="hero-mobil-submenu-item">All Posts</li>
+              </ul>
+            </li>
+            <li class="hero-mobil-menu-item hero-mobil-dropdown">
+              Company
+              <ul class="hero-mobil-dropdown-content">
+                <li class="hero-mobil-submenu-item">Best 5 Companies</li>
+                <li class="hero-mobil-submenu-item">Best 10 Companies</li>
+                <li class="hero-mobil-submenu-item">All Companies</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- *Mobil Menu End -->
+      </nav>
+      <!-- =>Navbar End -->
+      <!-- =>Hero Content Start -->
+      <div class="hero-title-section">
+        <h1 class="hero-title">
+          The home of your dream j<img
+            src="images/title-o.png"
+            alt="title o letter"
+            class="hero-title-o-letter"
+          />b
+        </h1>
+        <h4 class="hero-subtitle">
+          You do not have the right to remain silent… let us know what it takes
+          to challenge you
+        </h4>
+      </div>
+      <!-- =>Hero Content End -->
+      <!-- =>Hero Search Bar Start -->
+      <div class="hero-search">
+        <div class="hero-search-items">
+          <div class="hero-search-title-box">
+            <img
+              src="images/magnifying-glass-solid.svg"
+              alt="search icon"
+              class="hero-search-icon"
+            />
+            <input
+              type="text"
+              class="hero-title-search"
+              placeholder="Job Title or keyworld"
+            />
+          </div>
+          <div class="hero-search-location-box">
+            <img
+              src="images/location-dot-solid.svg"
+              alt="location icon"
+              class="hero-location-icon"
+            />
+            <input
+              type="text"
+              class="hero-location-search"
+              placeholder="Location"
+            />
+          </div>
+
+          <select
+            name="hero-job-type"
+            id="hero-job-type"
+            class="hero-search-select"
+          >
+            <option value="default">Pick a model</option>
+          </select>
+          <button class="hero-search-btn" onclick="searchSubmitHandler()">
+            Search Job
           </button>
-          <button class="arrow-right">
+        </div>
+        <div class="hero-trending-search">
+          <h3 class="hero-trending-search-title">Trending Searches</h3>
+          <ul class="hero-trending-search-list">
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Remote Job</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">UI/UX Design</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Product Design</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Development</button>
+            </li>
+            <li class="hero-trending-search-item">
+              <button class="hero-tranding-search-btn">Work from Home</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- =>Hero Search Bar End -->
+      <!-- =>Hero Images Start -->
+      <img src="images/saly.png" alt="sally images" class="hero-sally-img" />
+      <img
+        src="images/doodle.png"
+        alt="Doodle images"
+        class="hero-doodle-img"
+      />
+      <img src="images/bety.png" alt="Bety image" class="hero-bety-img" />
+      <img src="images/rainbow.png" alt="Bety image" class="hero-rainbow-img" />
+      <!-- =>Hero Images End -->
+    </div>
+    <!-- #Hero Section Start -->
+
+    <!-- =>Hero Filtering Modal Start -->
+    <div id="hero-modal-container" class="hero-modal-container">
+      <div class="hero-modal">
+        <img
+          id="hero-modal-close-icon"
+          src="images/menu-closed.png"
+          alt=""
+          class="hero-modal-close-icon"
+        />
+        <h3 class="hero-modal-title">Filtering Results</h3>
+        <table class="hero-modal-table">
+          <thead class="hero-modal-table-head">
+            <tr>
+              <th>Title</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Working Type</th>
+            </tr>
+          </thead>
+          <tbody id="hero-modal-table-body" class="hero-modal-table-body">
+            <!-- Data will be rendered here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- =>Hero Filtering Modal End -->
+    <!-- Onboarding Section Start -->
+    <div class="os-container">
+      <h3 class="os-title">HOW IT WORKS</h3>
+      <p class="os-text">Simple steps to get your next job</p>
+      <div class="os-card-container">
+        <div class="os-card">
+          <img src="images/check-purple.png" alt="" class="os-card-img" />
+          <h3 class="os-card-title">Register Your Account</h3>
+          <p class="os-card-text">
+            Capitalize on low hanging fruit to identify added Override the
+            digital
+          </p>
+        </div>
+        <div class="os-card">
+          <img src="images/id.png" alt="" class="os-card-img" />
+          <h3 class="os-card-title">Update Resume</h3>
+          <p class="os-card-text">
+            Capitalize on low hanging fruit to identify added Override the
+            digital
+          </p>
+        </div>
+        <div class="os-card">
+          <img src="images/check-orange.png" alt="" class="os-card-img" />
+          <h3 class="os-card-title">Apply for News Jobs</h3>
+          <p class="os-card-text">
+            Capitalize on low hanging fruit to identify added Override the
+            digital
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Onboarding Section End -->
+
+    <!-- Futured Jobs Started - Parviz -->
+    <div class="featured-jobs-container">
+      <div class="featured-jobs">
+        <div class="featured-jobs-header-container">
+          <div class="featured-jobs-header">
+            <h2>JOBS NEAR ME</h2>
+            <h1>Featured Jobs</h1>
+            <h3>Employee and Employment Company.</h3>
+          </div>
+          <div class="jobs-swiper-buttons">
+            <button class="arrow-left">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="arrow-right">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="vacansy-box-container"></div>
+        <div class="vacansy-see-all">
+          <button class="see-all-vacansy" id="show-all-vacansy">
+            See all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fa-solid fa-arrow-right"></i>
           </button>
         </div>
       </div>
-      <div class="vacansy-box-container"></div>
-      <div class="vacansy-see-all">
-        <button class="see-all-vacansy" id="show-all-vacansy">
-          See all&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
+    </div>
+    <!-- Futured Jobs End - Parviz -->
+
+    <!-- Jobs Section Start -->
+    <div class="js-container">
+      <h3 class="js-subtitle">99+ JOBS CATEGORY</h3>
+      <h1 class="js-title">Chose by category</h1>
+      <p class="js-text">
+        You do not have the right to remain silent… let us know what it takes to
+        challenge you
+      </p>
+      <div id="js-swiper" class="swiper mySwiper js-swiper">
+        <div
+          id="jsSwiperWrapper"
+          class="swiper-wrapper js-swiper-wrapper"
+        ></div>
+        <div class="js-swiper-pagination"></div>
       </div>
     </div>
-  </div>
-  <!-- Futured Jobs End - Parviz -->
+    <!-- Jobs Section End -->
 
     <!--Pricing Section Start / ONUR -->
 
-  <div class="main">
+    <div class="main">
+      <!--happy user-->
 
-    <!--happy user-->
+      <div class="container">
+        <div class="circle"></div>
 
-    <div class="container">
-      <div class="circle"></div>
-
-      <div class="happy-user">
-        <div class="emoji" onclick="increment()">
-          <p>👍🏽</p>
+        <div class="happy-user">
+          <div class="emoji" onclick="increment()">
+            <p>👍🏽</p>
+          </div>
+          <div class="text">
+            <p><strong id="counter-el">398</strong> Happy user</p>
+          </div>
         </div>
-        <div class="text">
-          <p><strong id="counter-el">398</strong> Happy user</p>
+
+        <!--swiper-->
+
+        <div class="swiper mySwiper" id="swiper-container">
+          <div class="swiper-wrapper" id="swiper-items"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
 
-      <!--swiper-->
+      <!--Pricing İnfo-->
 
-      <div class="swiper mySwiper" id="swiper-container">
-        <div class="swiper-wrapper" id="swiper-items">
-
-
+      <div class="pricing-info">
+        <div class="price-text">
+          <h3>PRICE VALUE</h3>
+          <h1>Our Pricing</h1>
+          <p>The link between the Employee and Employment Company.</p>
         </div>
-        <div class="swiper-pagination"></div>
 
+        <div class="btn">
+          <button class="monthly-btn" onclick="changeSwiperContent('monthly')">
+            Monthly
+          </button>
+          <div class="cizgi"></div>
+          <button class="yearly-btn" onclick="changeSwiperContent('yearly')">
+            Yearly
+          </button>
+        </div>
       </div>
     </div>
 
-    <!--Pricing İnfo-->
+    <!--Pricing Section End / ONUR -->
 
-    <div class="pricing-info">
-      <div class="price-text">
-        <h3>PRICE VALUE</h3>
-        <h1>Our Pricing</h1>
-        <p>The link between the Employee and Employment Company.</p>
-      </div>
-
-      <div class="btn">
-        <button  class="monthly-btn" onclick="changeSwiperContent('monthly')">Monthly</button>
-        <div class=" cizgi"></div>
-        <button  class="yearly-btn" onclick="changeSwiperContent('yearly')">Yearly</button>
-
-
-      </div>
-    </div>
-  </div>
-
-  <!--Pricing Section End / ONUR -->
-
-  <div class="clear-fix"></div>
+    <div class="clear-fix"></div>
 
     <!--! yakup/JU-1-testimonial-section start   -->
-       <div class="testimonial">
-        <div class="testimonial-header">
-            <h2 class="testimonial-header-testimonial-title">TESTIMONIALS</h2>
-            <h3 class="testimonial-header-customer-title">What our customers say</h3>
+    <div class="testimonial">
+      <div class="testimonial-header">
+        <h2 class="testimonial-header-testimonial-title">TESTIMONIALS</h2>
+        <h3 class="testimonial-header-customer-title">
+          What our customers say
+        </h3>
+      </div>
+      <div class="testimonial-content">
+        <div class="testimonial-content-customer-img">
+          <img
+            class="testimonial-content-customer-img-customer"
+            src=""
+            alt=""
+          />
         </div>
-        <div class="testimonial-content">
-            <div class="testimonial-content-customer-img">
-                <img class="testimonial-content-customer-img-customer" src="" alt="" />
-            </div>
-            <div class="testimonial-content-customer-info">
-                <div class="testimonial-content-customer-info-header">
-                    <h2 class="testimonial-content-customer-info-header-h2" ></h2>
-                    <p class="testimonial-content-customer-info-header-p" ></p>
-                </div>
-                <div class="testimonial-content-customer-info-details-title">
-                    <p class="testimonial-content-customer-info-details"></p>
-                    <img class="testimonial-content-customer-info-rate" src="" alt="" />
-                </div>
-                <h3>Behance</h3>
-                <div class="testimonial-content-customer-info-arrow">
-                    <i class="fa-solid fa-arrow-left" id="prev"></i>
-                    <i class="fa-solid fa-arrow-right" id="next"></i>
-                </div>
-            </div>
+        <div class="testimonial-content-customer-info">
+          <div class="testimonial-content-customer-info-header">
+            <h2 class="testimonial-content-customer-info-header-h2"></h2>
+            <p class="testimonial-content-customer-info-header-p"></p>
+          </div>
+          <div class="testimonial-content-customer-info-details-title">
+            <p class="testimonial-content-customer-info-details"></p>
+            <img class="testimonial-content-customer-info-rate" src="" alt="" />
+          </div>
+          <h3>Behance</h3>
+          <div class="testimonial-content-customer-info-arrow">
+            <i class="fa-solid fa-arrow-left" id="prev"></i>
+            <i class="fa-solid fa-arrow-right" id="next"></i>
+          </div>
         </div>
+      </div>
     </div>
-  <!--! yakup/JU-1-testimonial-section end   -->
- 
+    <!--! yakup/JU-1-testimonial-section end   -->
 
-  <!-- Newsletter Start -->
-  <div class="nc-container">
-    <h3 class="nc-title">NEWSLETTER</h3>
-    <p class="nc-text">Subscribe Newsletter</p>
-    <div class="nc-input-group">
-      <input type="text" class="nc-input" placeholder="Enter your email address" />
-      <button class="nc-button">Subscribe</button>
+    <!-- Newsletter Start -->
+    <div class="nc-container">
+      <h3 class="nc-title">NEWSLETTER</h3>
+      <p class="nc-text">Subscribe Newsletter</p>
+      <div class="nc-input-group">
+        <input
+          type="text"
+          class="nc-input"
+          placeholder="Enter your email address"
+        />
+        <button class="nc-button">Subscribe</button>
+      </div>
     </div>
-  </div>
-  <!-- Newsletter End -->
+    <!-- Newsletter End -->
 
-  <!-- Footer start -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="images/Logo.svg" alt="Xiera Logo" />
-        <div class="social-media">
-          <a href="#"><img src="images/Twitter.svg" alt="Twitter" /></a>
-          <a href="#"><img src="images/Facebook.svg" alt="Facebook" /></a>
-          <a href="#"><img src="images/Linkedin.svg" alt="LinkedIn" /></a>
+    <!-- Footer start -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="images/Logo.svg" alt="Xiera Logo" />
+          <div class="social-media">
+            <a href="#"><img src="images/Twitter.svg" alt="Twitter" /></a>
+            <a href="#"><img src="images/Facebook.svg" alt="Facebook" /></a>
+            <a href="#"><img src="images/Linkedin.svg" alt="LinkedIn" /></a>
+          </div>
+          <p class="follow-text">Follow our social media.</p>
         </div>
-        <p class="follow-text">Follow our social media.</p>
-      </div>
-      <div class="footer-support">
-        <h4>Support</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">How it Works</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Youtube</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4>Get in Touch</h4>
-        <div class="footer-contact1">
-          <p>123 456 7789 10</p>
-          <p>007 popie, New City, USA</p>
+        <div class="footer-support">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">How it Works</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <div class="footer-contact1">
+            <p>123 456 7789 10</p>
+            <p>007 popie, New City, USA</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="DesignedBy">Design with by UI hut. All Rights Reserved</p>
-      <p class="Creator">Besnik.com 2021</p>
-    </div>
-  </footer>
-  <!-- Footer end -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/app.js"></script>
-  
-</body>
-
+      <div class="footer-bottom">
+        <p class="DesignedBy">Design with by UI hut. All Rights Reserved</p>
+        <p class="Creator">Besnik.com 2021</p>
+      </div>
+    </footer>
+    <!-- Footer end -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>

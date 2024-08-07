@@ -259,7 +259,6 @@ const logOut = () => {
 
 // => User functions end
 
-
 const jobListings = [
   {
     logo: "https://via.placeholder.com/150x150/0077b6/ffffff?text=Gucci",
@@ -655,16 +654,12 @@ const swiper = new Swiper(".mySwiper", {
     depth: 100,
     modifier: 1,
     slideShadows: true,
-
   },
 
   pagination: {
     el: ".swiper-pagination",
-
   },
 });
-
-
 
 /*     HAPPY USER BUTTON   */
 
@@ -679,61 +674,60 @@ function increment() {
 
 /*   MONTHLY-YEARLY CHANGES PACKAGES   */
 
-const packagesProduct =
-{
+const packagesProduct = {
   monthly: [
     {
       id: 1,
       title: "BEGINNER",
       packageType: "Monthly Package",
-      price: "17"
-
-    }, {
+      price: "17",
+    },
+    {
       id: 2,
       title: "BASIC",
       packageType: "Monthly Package",
-      price: "27"
+      price: "27",
     },
     {
       id: 3,
       title: "PREMIUM",
       packageType: "Monthly Package",
-      price: "37"
-    }
+      price: "37",
+    },
   ],
   yearly: [
     {
       id: 1,
       title: "BEGINNER",
       packageType: "Yearly Package",
-      price: "57"
+      price: "57",
     },
     {
       id: 2,
       title: "BASIC",
       packageType: "Yearly Package",
-      price: "67"
+      price: "67",
     },
     {
       id: 3,
       title: "PREMIUM",
       packageType: "Yearly Package",
-      price: "77"
-    }]
-}
+      price: "77",
+    },
+  ],
+};
 
-const swiperWrapper = document.querySelector("#swiper-items")
+const swiperWrapper = document.querySelector("#swiper-items");
 
 const changeSwiperContent = (type) => {
-  swiperWrapper.innerHTML = '';
+  swiperWrapper.innerHTML = "";
   if (type === "monthly") {
-
     document.querySelector(".monthly-btn").style.color = "purple";
     document.querySelector(".yearly-btn").style.color = "black";
 
-
-    swiperWrapper.innerHTML = packagesProduct.monthly.map((item) => {
-      return `<div class="swiper-slide">
+    swiperWrapper.innerHTML = packagesProduct.monthly
+      .map((item) => {
+        return `<div class="swiper-slide">
      <div class="card">
        <h2 class="beginer">${item.title}</h2>
        <p>${item.packageType} </p>
@@ -746,14 +740,15 @@ const changeSwiperContent = (type) => {
        </ul>
        <button class="cta-button-${item.id}">Get Started Now</button>
      </div>
-   </div>`
-    }).join("")
-  }
-  else {
+   </div>`;
+      })
+      .join("");
+  } else {
     document.querySelector(".monthly-btn").style.color = "black";
     document.querySelector(".yearly-btn").style.color = "purple";
-    swiperWrapper.innerHTML = packagesProduct.yearly.map((item) => {
-      return `<div class="swiper-slide">
+    swiperWrapper.innerHTML = packagesProduct.yearly
+      .map((item) => {
+        return `<div class="swiper-slide">
      <div class="card">
        <h2 class="beginer">${item.title}</h2>
        <p>${item.packageType} </p>
@@ -766,129 +761,293 @@ const changeSwiperContent = (type) => {
        </ul>
        <button class="cta-button-${item.id}">Get Started Now</button>
      </div>
-   </div>`
-    }).join("")
-
+   </div>`;
+      })
+      .join("");
   }
   swiper.update();
-}
+};
 changeSwiperContent();
 
+const customers = [
+  {
+    name: "Saitama Sensei",
+    imageUrl: "images/0.png",
+    work: "frontend development",
+    description:
+      "Wanpanman) is a Japanese superhero manga series created by One. It tells the story of Saitama, an independent superhero who, because he can defeat any opponent with a single punch due to having trained himself to his peak condition, grows bored from a lack of challenge, setting out to find powerful opponents, while making allies of other heroes as well.",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "luffy Senpai",
+    imageUrl: "images/1.png",
+    work: "backend development",
+    description:
+      "“One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda. One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "John Med",
+    imageUrl: "images/2.png",
+    work: "web desingner",
+    description:
+      "“Really Jobfind is the best platform to get any kind of job, aspecially their support was awesome, They have tried to level best to give best support of new candidate.”",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "levi Acerman",
+    imageUrl: "images/3.png",
+    work: "full stack development",
+    description:
+      "Attack on Titan (Japanese: 進撃の巨人, Hepburn: Shingeki no Kyojin, lit. 'The Advancing Giant') is a Japanese manga series written and illustrated by Hajime Isayama. It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans; the story follows Eren Yeager, who vows to exterminate the Titans after they bring about the destruction of his hometown and the death of his mother. It was serialized in Kodansha's monthly magazine Bessatsu Shōnen Magazine from September 2009 to April 2021, with its chapters collected in 34 tankōbon volumes.",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "Nicola Tesla",
+    imageUrl: "images/4.png",
+    work: "embedded",
+    description:
+      "Nikola Tesla (/ˈtɛslə/;[2] Serbian Cyrillic: Никола Тесла, [nǐkola têsla]; 10 July [O.S. 28 June] 1856 – 7 January 1943) was a Serbian-American[3][4] engineer, futurist, and inventor. He is known for his contributions to the design of the modern alternating current (AC) electricity supply system.[5]",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "John Wick",
+    imageUrl: "images/5.png",
+    work: "frontend development",
+    description:
+      "“Really Jobfind is the best platform to get any kind of job, aspecially their support was awesome, They have tried to level best to give best support of new candidate.”",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "Bleach",
+    imageUrl: "images/6.png",
+    work: "backend development",
+    description:
+      "Bleach (stylized in all caps) is a Japanese manga series written and illustrated by Tite Kubo. It follows the adventures of a teenager Ichigo Kurosaki, who obtains the powers of a Soul Reaper—a death personification similar to a Grim Reaper—from another Soul Reaper, Rukia Kuchiki. His new-found powers allow him to take on the duties of defending humans from evil spirits and guiding departed souls to the afterlife, and set him on journeys to various ghostly realms of existence.",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+  {
+    name: "Demon Slayer",
+    imageUrl: "images/7.png",
+    work: "mobile development",
+    description:
+      "Demon Slayer: Kimetsu no Yaiba – To the Hashira Training (Japanese: 鬼滅の刃 柱稽古編, Hepburn: Kimetsu no Yaiba Hashira Geiko-hen), also known simply as Demon Slayer: To the Hashira Training, is a 2024 Japanese animated dark fantasy action film based on the Swordsmith Village and 'Hashira Training' arcs of the 2016–20 manga series Demon Slayer Kimetsu no Yaiba by Koyoharu Gotouge.",
+    rate: "images/group-star.svg",
+    status: "active",
+  },
+];
 
-const customers = [{
-  name: "Saitama Sensei",
-  imageUrl: "images/0.png",
-  work: "frontend development",
-  description: "Wanpanman) is a Japanese superhero manga series created by One. It tells the story of Saitama, an independent superhero who, because he can defeat any opponent with a single punch due to having trained himself to his peak condition, grows bored from a lack of challenge, setting out to find powerful opponents, while making allies of other heroes as well.",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "luffy Senpai",
-  imageUrl: "images/1.png",
-  work: "backend development",
-  description: "“One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda. One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.One Piece (stylized in all caps) is a Japanese manga series written and illustrated by Eiichiro Oda.",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "John Med",
-  imageUrl: "images/2.png",
-  work: "web desingner",
-  description: "“Really Jobfind is the best platform to get any kind of job, aspecially their support was awesome, They have tried to level best to give best support of new candidate.”",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "levi Acerman",
-  imageUrl: "images/3.png",
-  work: "full stack development",
-  description: "Attack on Titan (Japanese: 進撃の巨人, Hepburn: Shingeki no Kyojin, lit. 'The Advancing Giant') is a Japanese manga series written and illustrated by Hajime Isayama. It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans; the story follows Eren Yeager, who vows to exterminate the Titans after they bring about the destruction of his hometown and the death of his mother. It was serialized in Kodansha's monthly magazine Bessatsu Shōnen Magazine from September 2009 to April 2021, with its chapters collected in 34 tankōbon volumes.",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "Nicola Tesla",
-  imageUrl: "images/4.png",
-  work: "embedded",
-  description: "Nikola Tesla (/ˈtɛslə/;[2] Serbian Cyrillic: Никола Тесла, [nǐkola têsla]; 10 July [O.S. 28 June] 1856 – 7 January 1943) was a Serbian-American[3][4] engineer, futurist, and inventor. He is known for his contributions to the design of the modern alternating current (AC) electricity supply system.[5]",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "John Wick",
-  imageUrl: "images/5.png",
-  work: "frontend development",
-  description: "“Really Jobfind is the best platform to get any kind of job, aspecially their support was awesome, They have tried to level best to give best support of new candidate.”",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "Bleach",
-  imageUrl: "images/6.png",
-  work: "backend development",
-  description: "Bleach (stylized in all caps) is a Japanese manga series written and illustrated by Tite Kubo. It follows the adventures of a teenager Ichigo Kurosaki, who obtains the powers of a Soul Reaper—a death personification similar to a Grim Reaper—from another Soul Reaper, Rukia Kuchiki. His new-found powers allow him to take on the duties of defending humans from evil spirits and guiding departed souls to the afterlife, and set him on journeys to various ghostly realms of existence.",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-{
-  name: "Demon Slayer",
-  imageUrl: "images/7.png",
-  work: "mobile development",
-  description: "Demon Slayer: Kimetsu no Yaiba – To the Hashira Training (Japanese: 鬼滅の刃 柱稽古編, Hepburn: Kimetsu no Yaiba Hashira Geiko-hen), also known simply as Demon Slayer: To the Hashira Training, is a 2024 Japanese animated dark fantasy action film based on the Swordsmith Village and 'Hashira Training' arcs of the 2016–20 manga series Demon Slayer Kimetsu no Yaiba by Koyoharu Gotouge.",
-  rate: "images/group-star.svg",
-  status: "active",
-},
-
-
-]
-
-
-
-const testimonialContent = document.querySelector(".testimonial-content")
-const customerImage = document.querySelector(".testimonial-content-customer-img-customer");
-const customerName = document.querySelector(".testimonial-content-customer-info-header-h2");
-const customerWork = document.querySelector(".testimonial-content-customer-info-header-p");
-const customerDescription = document.querySelector(".testimonial-content-customer-info-details");
-const rateSvg = document.querySelector(".testimonial-content-customer-info-rate")
-const prevButton = document.querySelector("#prev")
-const nextButton = document.querySelector("#next")
+const testimonialContent = document.querySelector(".testimonial-content");
+const customerImage = document.querySelector(
+  ".testimonial-content-customer-img-customer"
+);
+const customerName = document.querySelector(
+  ".testimonial-content-customer-info-header-h2"
+);
+const customerWork = document.querySelector(
+  ".testimonial-content-customer-info-header-p"
+);
+const customerDescription = document.querySelector(
+  ".testimonial-content-customer-info-details"
+);
+const rateSvg = document.querySelector(
+  ".testimonial-content-customer-info-rate"
+);
+const prevButton = document.querySelector("#prev");
+const nextButton = document.querySelector("#next");
 
 let currentIndex = 0;
 function updateCustomerDetails(customer) {
-customerImage.src = customer.imageUrl;
-customerImage.alt = customer.name;
-customerName.textContent = customer.name;
-customerWork.textContent = customer.work;
-customerDescription.textContent = customer.description;
-rateSvg.src = customer.rate
+  customerImage.src = customer.imageUrl;
+  customerImage.alt = customer.name;
+  customerName.textContent = customer.name;
+  customerWork.textContent = customer.work;
+  customerDescription.textContent = customer.description;
+  rateSvg.src = customer.rate;
 }
 
 function updateCarousel() {
-updateCustomerDetails(customers[currentIndex]);
-testimonialContent.classList.add('fade-out');
-prevButton.classList.toggle('arrow-disabled', currentIndex === 0);
-nextButton.classList.toggle('arrow-disabled', currentIndex === customers.length - 1);
+  updateCustomerDetails(customers[currentIndex]);
+  testimonialContent.classList.add("fade-out");
+  prevButton.classList.toggle("arrow-disabled", currentIndex === 0);
+  nextButton.classList.toggle(
+    "arrow-disabled",
+    currentIndex === customers.length - 1
+  );
 
-testimonialContent.addEventListener('transitionend', () => {
-  testimonialContent.classList.remove('fade-out');
-},{ once: true });
+  testimonialContent.addEventListener(
+    "transitionend",
+    () => {
+      testimonialContent.classList.remove("fade-out");
+    },
+    { once: true }
+  );
 }
 
-prevButton.addEventListener('click', () => {
-
-if (currentIndex > 0) {
+prevButton.addEventListener("click", () => {
+  if (currentIndex > 0) {
     currentIndex--;
     updateCarousel();
-}
+  }
 });
 
-nextButton.addEventListener('click', () => {
-if (currentIndex < customers.length - 1) {
+nextButton.addEventListener("click", () => {
+  if (currentIndex < customers.length - 1) {
     currentIndex++;
     updateCarousel();
-}
+  }
 });
 
+// Jobs Section JS Start
+
+const jobsCategories = [
+  {
+    id: 1,
+    img: "/images/design-category.png",
+    title: "Design",
+    jobAmount: "310 vacancy",
+  },
+  {
+    id: 2,
+    img: "/images/business-category.png",
+    title: "Business",
+    jobAmount: "105 vacancy",
+  },
+  {
+    id: 3,
+    img: "/images/development-category.png",
+    title: "Development",
+    jobAmount: "312 vacancy",
+  },
+  {
+    id: 4,
+    img: "/images/communication-category.png",
+    title: "Communication",
+    jobAmount: "319 vacancy",
+  },
+  {
+    id: 5,
+    img: "/images/design-category.png",
+    title: "Design",
+    jobAmount: "310 vacancy",
+  },
+  {
+    id: 6,
+    img: "/images/business-category.png",
+    title: "Business",
+    jobAmount: "105 vacancy",
+  },
+  {
+    id: 7,
+    img: "/images/development-category.png",
+    title: "Development",
+    jobAmount: "312 vacancy",
+  },
+  {
+    id: 8,
+    img: "/images/communication-category.png",
+    title: "Communication",
+    jobAmount: "319 vacancy",
+  },
+  {
+    id: 9,
+    img: "/images/design-category.png",
+    title: "Design",
+    jobAmount: "310 vacancy",
+  },
+  {
+    id: 10,
+    img: "/images/business-category.png",
+    title: "Business",
+    jobAmount: "105 vacancy",
+  },
+  {
+    id: 11,
+    img: "/images/development-category.png",
+    title: "Development",
+    jobAmount: "312 vacancy",
+  },
+  {
+    id: 12,
+    img: "/images/communication-category.png",
+    title: "Communication",
+    jobAmount: "319 vacancy",
+  },
+];
+
+const jsSwiperWrapper = document.querySelector("#jsSwiperWrapper");
+
+jsSwiperWrapper.innerHTML = jobsCategories
+  .map((jobCategory) => {
+    return `<div class="swiper-slide js-swiper-slider">
+    <img
+    src="${jobCategory.img}"
+    alt="${jobCategory.title}"
+    class="js-slide-img"
+    />
+    <h3 class="js-slide-title">${jobCategory.title}</h3>
+    <p class="js-slide-text">${jobCategory.jobAmount}</p>
+  </div>`;
+  })
+  .join("");
+
+// => Swiper Start
+
+const swiper = new Swiper("#js-swiper", {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 240,
+  mousewheel: true,
+  pagination: {
+    el: ".js-swiper-pagination",
+    clickable: true,
+    bulletClass: "js-swiper-pagination-bullet",
+    bulletActiveClass: "js-swiper-pagination-bullet-active",
+    renderBullet: (index, className) => {
+      return `<div class="${className}"></div>`;
+    },
+  },
+  on: {
+    slideChange: () => {
+      const bullets = document.querySelectorAll(".js-swiper-pagination-bullet");
+      bullets.forEach((bullet, index) => {
+        index < total
+          ? bullet.classList.remove("js-swiper-pagination-bullet-active")
+          : "";
+        index === Math.floor(swiper.activeIndex)
+          ? bullet.classList.add("js-swiper-pagination-bullet-active")
+          : "";
+      });
+    },
+  },
+  breakpoints: {
+    480: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 50,
+    },
+    640: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 50,
+    },
+  },
+});
+
+// => Swiper End
+
+// Jobs Section JS End
 
 updateCarousel();
